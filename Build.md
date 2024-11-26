@@ -85,7 +85,39 @@ We are able to connect to mysql without password.
 
 ![{83C8F66A-64D2-4DE4-9F26-4A63214A7BEC}](https://github.com/user-attachments/assets/504efd07-ea2d-40fc-a9e1-080db55c0164)
 
-But before cracking I found some interesting IPs
+I run cracking and found some interesting IPs
+
+![{A167FC58-CA8B-4773-8B9F-2180B4D17FD4}](https://github.com/user-attachments/assets/89854343-fb7d-4532-a34c-e09f025d3ed5)
+
 
 ![{80D05ECC-88A6-4D5A-9DE5-2B0F8541EF54}](https://github.com/user-attachments/assets/cbdddb18-e3ac-42bb-8e19-44951f2e6eca)
 
+In burp we turn on socks proxy
+
+![{C26FE301-F89A-4C62-BCB8-E303F7DF474E}](https://github.com/user-attachments/assets/1bad48bd-5508-4c83-869a-f55b54940800)
+
+![{5952F5F1-8076-4B57-8D37-AFAC0B86DCF6}](https://github.com/user-attachments/assets/ef70a2cc-2ca6-47ae-8700-2e22725a7ff9)
+
+(ten drugi host jakieś hasło ma)
+
+cracked password works here with username `admin`.
+
+![{8E517551-BB0D-4241-9B07-BF7ED38E7E24}](https://github.com/user-attachments/assets/6cc7a55e-758e-4b44-b8c1-ed74e3986940)
+
+Jak widzimy mamy tutaj dostęp do strefy "build.vl".
+
+![{15248988-F773-4AB7-A054-6068962FED3E}](https://github.com/user-attachments/assets/816e2205-3a76-4db4-bed8-2d004b6a6498)
+
+Z mysqla widzieliśmy kilka innych, ale też w /root z dokerze było coś ciekawego i screenka nie dałem
+
+![{A7C91869-A792-4FDB-8D8E-95568E973BE6}](https://github.com/user-attachments/assets/daedf8b3-c43e-405c-923f-7fe5e664cdda)
+
+To by znaczyło, że RSH client ufa zarówno subdomenkom `intern` jak i `admin`, ale tylko to `intern` jest skonfigurowana. Jedyne co musimy zrobić to zmienić adres IP na nasz
+
+![{043BA9B6-EC13-4A22-8AD2-DF914D55C720}](https://github.com/user-attachments/assets/4beaff6d-888f-4316-91f5-0ea21ced1b45)
+
+![{0096EE3C-B471-4AF5-A448-737FF9E8EDCF}](https://github.com/user-attachments/assets/3b118e0a-c546-4c5c-8817-373bbf944609)
+
+![{23BCD616-91D3-44D2-A55F-664EC04333F1}](https://github.com/user-attachments/assets/db67a336-3996-442b-8e57-cf8e30305bc0)
+
+FINISH
