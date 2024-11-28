@@ -217,5 +217,11 @@ klasyczek. All failed.
 Dobra znalazłem takie cuda. 
 `https://github.com/itm4n/Perfusion.git`
 
+kompilacja i wrzucamy na maszynkę.
+
+![{4D6848EE-7787-48A1-9051-8523D70062E7}](https://github.com/user-attachments/assets/d27c7f7f-ded8-428b-8669-12c340174f4f)
+
+no i mamy system
+
 
 
