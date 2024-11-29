@@ -313,5 +313,19 @@ I need downlaod bash from machine and change SUID
 
 nice!!
 
+![{577662D3-5F30-4BD9-9D2B-0932CA1E65E1}](https://github.com/user-attachments/assets/448185f6-be87-4749-90cc-2c25bc9438e0)
 
+We send "send the file without sending"
 
+```
+cat passwords.kdbx | base64 -w0
+```
+
+![{FE9191E1-E789-428B-9708-2CC741760436}](https://github.com/user-attachments/assets/1edfd828-f02e-40e6-98dc-b55c49b6025e)
+
+I weasted to much time for cracking..
+IT was password reuse from 
+
+- zacięła mi się vmka i mi się odechciało xd
+
+- 
