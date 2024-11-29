@@ -273,8 +273,45 @@ jakikolwiek mail do `junk`
 
 ![{1DCB7A0E-F911-4F61-995D-9868AEEDC120}](https://github.com/user-attachments/assets/04ddb1eb-ede5-48c5-83d8-8ba2e90e0053)
 
+- credsy `peter.turner@hybrid.vl` nie działają :/
 
+![{FFBCEE09-BEB5-45ED-8953-156EC7F49C37}](https://github.com/user-attachments/assets/a070cee9-e148-4ea4-9a5e-689498d33786)
 
+![{19E02589-3DDA-4544-82C5-984D3A826069}](https://github.com/user-attachments/assets/08d5320e-4f96-4002-bf1e-58dbde0f1a96)
+
+hmmmm. Może coś z tym sharem się uda
+
+![{3E44E07D-892E-40DC-BEA9-D10C1E07F43C}](https://github.com/user-attachments/assets/91198b8b-82cf-4070-87f8-37111d8cd85e)
+
+![{12D6FF8B-8DEE-4F30-BDC4-F1248B10562B}](https://github.com/user-attachments/assets/f770141a-79ce-459a-8887-b4a515e8211b)
+
+nie da się jako root, ale pewnie da się jako ten peter. Tylko znaleźć jego uid
+
+![{F9DD5D0C-8628-4675-8F2E-6FBF41AE03FC}](https://github.com/user-attachments/assets/326a1e29-946a-4a91-a31d-02c484e490ef)
+
+![{AC7651F0-E0F9-4A0F-A3D0-391D09CD058C}](https://github.com/user-attachments/assets/ae851849-3725-43dd-b129-d9ad81e3f9b6)
+
+ajajaja trzeba zmienić.
+
+![{FB1DAE7C-CAE9-47E9-A70E-86974EA0B70F}](https://github.com/user-attachments/assets/edf10b25-713c-4b8f-ad1c-19bc22a7ff54)
+
+![{07AD332D-F894-469D-9E0C-07A12070D63A}](https://github.com/user-attachments/assets/b97dc9d4-031b-410b-a114-dc87d31651ae)
+
+![{1CDDC298-8B33-4A8B-908C-17CBDB4B4BB9}](https://github.com/user-attachments/assets/65eff009-c267-408b-a133-fe355ccfab21)
+
+![{D5908FCD-61FA-4DCE-9B17-701DB56D0CBE}](https://github.com/user-attachments/assets/8276057c-dfaa-4a45-9d49-98caf2230899)
+
+echhhhhhhhh
+
+I need downlaod bash from machine and change SUID
+
+![{CF7622C6-CA90-4479-8915-8C5C0E430842}](https://github.com/user-attachments/assets/22206f3a-1f30-4ba6-9bfa-1f716765bbe2)
+
+![{88E020C6-E1C8-40FF-8500-0B110EC4184A}](https://github.com/user-attachments/assets/e9f358d9-ba9d-47d4-bd0f-7e22ef39c8ae)
+
+![{588AA037-8F72-4062-B85B-71EAF86305DE}](https://github.com/user-attachments/assets/000d94ec-a1fa-4a55-aec3-5b527f75d68c)
+
+nice!!
 
 
 
