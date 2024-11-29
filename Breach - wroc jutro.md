@@ -105,9 +105,22 @@ after correction john cracked it in 00sek
 ![{09740161-3FE9-4F20-BE79-C0E71EA2CA7C}](https://github.com/user-attachments/assets/b0864eac-3608-4452-add7-1ad5c0fb69a0)
 
 mamy jakiś pliczek
+- local.txt to flaga
 
+- 
 ![{21D09F77-729F-469C-9654-4DE622DCA38C}](https://github.com/user-attachments/assets/2e1558fa-8c14-435d-8fc8-9b87a36f0c71)
 
 we also have access to anoter users but their directories are empty.
 
+![{E562EC31-A68C-4CC5-95B8-384A53BB8015}](https://github.com/user-attachments/assets/1948165f-d412-4f57-9807-f84b9029fa4e)
+
+o kerberoassting
+
+John znowu złamał w 00sek
+
+```
+john hash2 -w=~/SHARED/lists/rockyou.txt
+```
+
+user nazywa się `svc_mssql`, ale nie pamiętam, żeby port 1433 był otwarty.
 
