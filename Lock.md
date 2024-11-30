@@ -192,4 +192,39 @@ i mamy usera kolejnego
 
 ![{A71C153B-214E-403F-90CB-B3CAC8FADAF3}](https://github.com/user-attachments/assets/6632cc07-2dd5-4f90-a473-ff86d0bb4833)
 
+w ciemno czułem, że chodzi o tego Pana (CVE-2023-49147)
+
+![{D6919D21-26BE-435D-9BEF-363D0BD15A65}](https://github.com/user-attachments/assets/71e4e64d-9288-4092-8e1d-d21efba622b0)
+
+to po lecimy. Czytamy tutaj `https://packetstormsecurity.com/files/176206/PDF24-Creator-11.15.1-Local-Privilege-Escalation.html`, że odpalamy jedną komendę, ale trzeba mieć na kompie `SetOpLock.exe`. Zatem najpierw to przygotujemy `https://github.com/googleprojectzero/symboliclink-testing-tools`
+MAJĄ PRE-COMPILED https://github.com/googleprojectzero/symboliclink-testing-tools/releases/download/v1.0/Release.7z
+
+`xfreerdp /v:10.10.121.14 /u:Gale.Dekarios /p:t<sam zrób leniu> /drive:precompiled`
+
+![{72C8C600-E62B-4691-9523-8C56C07F79E3}](https://github.com/user-attachments/assets/6ec97242-2a8c-4871-af54-9d98ca6dd17b)
+
+![{2FB44F08-21CE-4518-892B-D0DE8D571391}](https://github.com/user-attachments/assets/638893c6-7de7-4760-93d6-d0f26ab932ca)
+
+![{8B0A1098-31EF-42D7-BC5E-A4BE234AD1B4}](https://github.com/user-attachments/assets/093833f8-cd56-4c13-92e4-d73f166442a8)
+
+- czekamy około 4 minutki
+
+![{DD1E3A2B-A2DD-4D72-90A1-5D6AE557D296}](https://github.com/user-attachments/assets/15a1f48e-01a1-4a90-ad7a-3bd19ae08a3a)
+
+- lekko namieszałem sobie, ale jak ktoś robi z PoC to działa bez problemu
+
+![{5602F590-F792-4EAB-96A0-34DBFC741FAF}](https://github.com/user-attachments/assets/7bda3fd3-3a00-4d29-a785-53b4396b3ab7)
+
+![{9C59A0B7-8E8F-49F4-9D8C-39CD8DDDF344}](https://github.com/user-attachments/assets/36e4f34e-0c17-4bfb-b2c7-210a79b081be)
+
+Ctrl+o
+
+![{84D2D5BE-C0C4-4FA5-A6B0-093625575EAF}](https://github.com/user-attachments/assets/b5e6747e-9b70-4ca1-a77c-2557218f95c4)
+
+![{A411949C-080F-4F93-A8CC-6F6D5FCCE162}](https://github.com/user-attachments/assets/9a775382-c773-48be-85d3-0b8cdbc2d1dd)
+
+![{4F7580E5-51D6-4147-B37A-7C864D38BB7F}](https://github.com/user-attachments/assets/ff3d0dc9-8343-4874-ab03-ce508dac9df5)
+
+dobra koniec.
+
 
