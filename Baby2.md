@@ -77,5 +77,27 @@ bloodhound-python -c ALL -u Carl.Moore -p 'Carl.Moore' -d baby2.vl --auth-method
 ```
 co ciekawe gdy używałem `-dc dc01.baby2.vl` (mimo posiadania tego w /etc/hosts) to nie przechodziła authentykacja kerberosem xd
 
+![{4A2B2473-F605-4407-B681-2B44C6BAFCDB}](https://github.com/user-attachments/assets/7d271655-a4d0-4a21-8544-1f8a6cb0f696)
 
+w sumie to z tego co mamy nic nie wynika. Go next
 
+![{48893DC3-25A1-4453-9AE3-4A26C78C8E18}](https://github.com/user-attachments/assets/31cafbf7-ead2-4a21-8ae4-877f97897494)
+
+to wygląda bardziej przyziemnie, ale nie mamy nicoli.
+trzeba chyba się cofnąć i przemyśleć co mamy.
+- dobra wiem. Ten skrypt w VBA to on jest w miejscu gdzie mamy write. Więc chyba starczy go podmienić i zapewne cron dla mapowania dysków go odpali.
+
+![{46D583D0-D1BC-4F7B-98B3-8419976E2B13}](https://github.com/user-attachments/assets/79b9acc8-7609-4fe5-8e9b-3f7d16c5cb78)
+
+![{D0E042AB-305A-4B8E-8BAA-3654C2122C66}](https://github.com/user-attachments/assets/e2227512-1ad4-4002-bbd8-c97f5accc9bc)
+
+jak damy `-` na końcu to czytamy plik bez pobierania. W ftp też tak działa.
+
+![{36A4BFA9-BD8A-4B9D-8B7E-3DC0EB49BE37}](https://github.com/user-attachments/assets/a89e53b8-9d21-4026-bdab-acb76ea616b8)
+
+minutka i mamy hash. Trochę się dziwię, że NetNTLMv1, ale cóż.
+
+![{A513E6A5-CB22-432E-8C6B-DE70C27951C1}](https://github.com/user-attachments/assets/bf56931b-b7f3-4f33-9948-d91c91151ce0)
+
+Dobra inna taktyka jak nie da się złamać (pewnie się da, ale autor miał co innego na mysli). Jak to VBA to po prostu revshell w vba albo pobieranie rev shella exe/ps1 i odpalanie).
+Powiem szczerze spory problem miałem z tym.
