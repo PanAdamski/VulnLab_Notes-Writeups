@@ -67,7 +67,15 @@ ogólnie to sporo `write` już mam
 
 tak w solidnym skrócie to to po prostu mapuje share apps na dysk V oraz docs na L.
 
+wydaje mi się, że wycsinąłem co się dało z shareów. Trzeba kolejny krok spróbować
 
+to co zrobię teraz nie do końca ma sens na maszynkach, ale w prawdziwych scenariuszach gdzie mamy po np. 2000 komputerów w sieci zauważyłem, że dużo to zmieniało.
+(chodzi o odpalanie bloodhounda kilka razy na różnych userach)
+```
+bloodhound-python -c ALL -u library -p 'library' -d baby2.vl --auth-method kerberos -ns 10.10.75.154
+bloodhound-python -c ALL -u Carl.Moore -p 'Carl.Moore' -d baby2.vl --auth-method kerberos -ns 10.10.75.154
+```
+co ciekawe gdy używałem `-dc dc01.baby2.vl` (mimo posiadania tego w /etc/hosts) to nie przechodziła authentykacja kerberosem xd
 
 
 
