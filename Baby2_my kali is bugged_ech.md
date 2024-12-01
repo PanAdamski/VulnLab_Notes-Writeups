@@ -101,3 +101,12 @@ minutka i mamy hash. Trochę się dziwię, że NetNTLMv1, ale cóż.
 
 Dobra inna taktyka jak nie da się złamać (pewnie się da, ale autor miał co innego na mysli). Jak to VBA to po prostu revshell w vba albo pobieranie rev shella exe/ps1 i odpalanie).
 Powiem szczerze spory problem miałem z tym.
+
+Śmiesznie. Pół godziny klikam, czekam, zmieniam... nie działa.
+Spoglądam dowriteupa, a tam mu działa.. ech.
+- przy okazji ciekawa uwaga na przyszłość. To, że nie mamy WRITE na share'rze to nie znaczy, że nie możemy nadpisać w nim pliku albo dodać pliku katalog głębiej.
+
+Dobra miałem literówkę i zamiast `Sub` miałem `ub`
+
+![{03DEF3CE-F14C-4803-B726-A11B42B01C6E}](https://github.com/user-attachments/assets/dacd2fb7-e509-4319-a416-81177ed9ac4a)
+
