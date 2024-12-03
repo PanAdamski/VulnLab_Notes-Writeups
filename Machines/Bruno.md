@@ -46,4 +46,12 @@ coś tam rusza powoli.
 
 ![{AFC9CBA7-7450-416F-91BB-FA3AAD2BAB96}](https://github.com/user-attachments/assets/7c6f00af-d806-4747-af0c-396af083d813)
 
+trochę enumeracji
+
+![{A4286F5D-37F8-4A7E-ABDD-91F587EB586A}](https://github.com/user-attachments/assets/86e44804-0378-4359-aa6b-4c2ae3ccbd69)
+
+![{66D86B0A-8E70-4E40-9A91-4F8081A71945}](https://github.com/user-attachments/assets/e504e5c3-2532-4c7b-81e0-2f06ba97087b)
+
+Niby ESC8 pokazuje.
+
 
