@@ -81,5 +81,10 @@ Lets upload some enumeration tools on machine. `https://github.com/DominicBreuke
 
 some sort of login script was run
 
+![{E5026A78-90D3-43A7-AF1A-BD8A1F017771}](https://github.com/user-attachments/assets/ebeed451-b1ec-41e2-b9c2-a434802a2ba6)
 
+index.php in `/usr/share/zabbix` was edited today so I think this is a way for escalation.
 
+I also found so password in zabbix config.
+
+![{0CE5E9FF-021A-4AE8-8643-0D4377D3A11E}](https://github.com/user-attachments/assets/845decd3-a25e-4f00-962c-de6c4778b915)
