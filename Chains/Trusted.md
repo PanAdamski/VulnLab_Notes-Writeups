@@ -430,4 +430,7 @@ Scanning: http://10.10.229.150/dashboard/javascripts/
 Scanning: http://10.10.229.150/dashboard/ru/                                                                                                                                                                                                                                                      
 ```
 
+W sumie jedyne co wygląda ciekawie to `/dev/*`
+
+
 
