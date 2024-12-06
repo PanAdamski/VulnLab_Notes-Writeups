@@ -73,6 +73,18 @@ proxychains4 -q nxc ssh 10.10.215.54 -u full_users_list_and_domain -p '<pass fro
 siadło do usera `svc-web-accounting-d` na 10.10.215.53 po smb and user `svc-web-accounting-d` with ssh access on 10.10.215.54.
 - btw jeżeli dalibyśmy print $1 w awk wyżej to zamiast  `svc-web-accounting-d` mielibyśmy usera  `svc-web-accounting-dev` i wtedy by nie siadło.
 
+![{6A656547-7B63-42C5-8134-8536F6367167}](https://github.com/user-attachments/assets/98da0fbd-a98b-462d-a106-354f56fa038f)
+
+och new share.
+
+![{C9DECD92-BC73-414F-A53D-E5651B460B8B}](https://github.com/user-attachments/assets/b20c8021-1ab1-4b3e-8afa-6657548e1036)
+
+o mmay write tam gdzie jest web.config
+- wygląda jak proste nt authority system
+- ale też nadpisywanie web.config może dużo rozwalić więc poszukam innych metod
+
+trochę czytania `https://soroush.me/blog/tag/rce/`.
+
 
 
 
