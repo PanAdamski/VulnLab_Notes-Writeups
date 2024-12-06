@@ -51,7 +51,7 @@ I will be posting notes/writings from the vulnlab site here. Sometimes they will
 | Machine | User Flag | User2 Flag | Root Flag |
 | --- | :---: | :---: | :---: |
 | Hybrid | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: |
-| Trusted | :x:| :x:|:x:|
+| Trusted | :heavy_check_mark:| |:heavy_check_mark:|
 | Heron | :x:| :x:|:x:|
 | Lustrous | :x:| :x:|:x:|
 | Mythical | :x:| :x:|:x:|
