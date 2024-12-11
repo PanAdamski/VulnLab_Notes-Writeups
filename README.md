@@ -18,7 +18,7 @@ I will be posting notes/writings from the vulnlab site here. Sometimes they will
 | Retro2 | :heavy_check_mark: :heavy_check_mark: | :heavy_check_mark: |
 | Sync | :heavy_check_mark: | :heavy_check_mark: |
 | Baby2 | :heavy_check_mark: | :heavy_check_mark: |
-| Bamboo | :x:| :x:|
+| Bamboo | :heavy_check_mark:| :heavy_check_mark:|
 | Breach | :heavy_check_mark: | :heavy_check_mark: |
 | Bruno | :x:| :x:|
 | Cicada | :x:| :x:|
