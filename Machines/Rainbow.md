@@ -75,4 +75,14 @@ p.close()
 - przypadek w sumie prawie 1:1 jak miałem na oscp swoim.
 I went back to the source I used then as well as I use whenever I need to make a BoF [https://tryhackme.com/r/room/bufferoverflowprep](https://tryhackme.com/r/room/bufferoverflowprep)
 
+Pobieramy sobie .exe na windowsa i lecimy
+
+![{D2330998-E041-4B95-828E-E2DA47176D80}](https://github.com/user-attachments/assets/136685e0-50ac-4187-afbf-1cc2139ad744)
+
+![{77A8B0CB-9939-4D37-A7A9-BA43BBABA20C}](https://github.com/user-attachments/assets/ec884585-ea2d-4100-af86-4258f2672d5f)
+
+dobra nie pobieramy...
+- ten skrypcik w ps1 w sumie szuka procesu o nazwie rainbow i jeżeli go nie ma to uruchamia naszego .exe.
+- Jak proces się zawiesi albo zajmuje za dużo (ponad 200mb) to też resecik.
+
 
