@@ -85,4 +85,4 @@ dobra nie pobieramy...
 - ten skrypcik w ps1 w sumie szuka procesu o nazwie rainbow i jeżeli go nie ma to uruchamia naszego .exe.
 - Jak proces się zawiesi albo zajmuje za dużo (ponad 200mb) to też resecik.
 
-
+I tried win10 and win11 x64. Maybe it is x86.. fuck it. I will change machine
