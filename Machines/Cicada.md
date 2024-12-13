@@ -199,3 +199,6 @@ export KRB5CCNAME=rosie.powell.ccache
 
 zatem mamy ECS8.
 
+Dobra lekki resarch i Nazwa CICADA8-research wygląda jakby to miało być powiązane :D
+[https://github.com/CICADA8-Research/RemoteKrbRelay.git](https://github.com/CICADA8-Research/RemoteKrbRelay.git)
+
