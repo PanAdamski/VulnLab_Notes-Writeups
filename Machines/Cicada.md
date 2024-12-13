@@ -202,3 +202,40 @@ zatem mamy ECS8.
 Dobra lekki resarch i Nazwa CICADA8-research wygląda jakby to miało być powiązane :D
 [https://github.com/CICADA8-Research/RemoteKrbRelay.git](https://github.com/CICADA8-Research/RemoteKrbRelay.git)
 
+- we need to use .exe (becuase I couldn't find PoC in python) but we can't login to DC via rdp/winrm.
+
+![{EC2724CC-BF95-46D9-8721-FEEC60F129F9}](https://github.com/user-attachments/assets/d01d1037-1f57-420c-8aae-3f9236ade88c)
+
+okey ez. 
+
+![{21ECEB9A-2966-4B28-A6DD-7295012028D5}](https://github.com/user-attachments/assets/59c4fd60-479a-48e8-b8fa-805ae01fbd94)
+
+now we need open new VM. With windows now. Windows need the same network configuration like kali. For me this sie bridged.
+
+connect to VPN from windows
+
+![{BCC5C5CE-E15F-428A-8C98-AE710EB0876D}](https://github.com/user-attachments/assets/0bc9ca36-827f-43d5-82e9-05b6d338c8dd)
+
+change DNS for DC IP.
+
+![{6287E26C-05B8-4685-A6BF-65F27B6B384C}](https://github.com/user-attachments/assets/26f5c7d4-ffe0-45bf-a452-f2fd91225aaa)
+
+i muszą być problemy.....
+
+![{E6438141-84AC-44C0-9377-6EF6217CEF10}](https://github.com/user-attachments/assets/b1f543b4-f39e-47ca-862c-51ec14510f2b)
+
+z jakiegoś powodu windows ma priorytet na DNSie, który.. nadpisałem? Nice....
+
+![{48D74F1B-4785-4A1A-B644-ADCF535F8349}](https://github.com/user-attachments/assets/119072d9-d0a1-440f-ae50-faafa65fcacb)
+
+Windows please..
+
+![{C9F1364A-5761-4A70-B9B9-262F0D1B4B41}](https://github.com/user-attachments/assets/8802a8f3-f5f6-4f31-93cd-e39284a20483)
+
+openvpn
+
+![{80DD8DDB-7620-411D-9110-67436F5694B7}](https://github.com/user-attachments/assets/5ddd1f06-931e-4cde-9c21-646fc00d256b)
+
+ethernel adapter
+
+- nie działa. Mam dość. Idę spać xD
