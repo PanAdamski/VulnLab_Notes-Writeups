@@ -179,4 +179,83 @@ tutaj musiałem trochę doczytać. SAM.ldb może być ciekawy z tego zrozumiałe
 
 ![{C40F40BE-E48D-4B42-9C6F-F9A4FCE0415D}](https://github.com/user-attachments/assets/0a34796f-6c9a-40ec-a125-5ac0645c135e)
 
+`https://wiki.samba.org/index.php/LDB` tutaj znalazłem ciekawe toole.
+
+![{9322D699-CD74-41C3-8426-78EA1CC7FDCD}](https://github.com/user-attachments/assets/fecd7496-661d-4d29-90c6-5be1e4bf9018)
+
+i oczywiście u mnie musi nie działać.
+
+
+coś mi nie działają toole :/
+- właśnie widzę, że -H to połączenie do URL, a ludzie robili normalnie tym toole z takimi switachami... ech (btw celujemy w `unicodePwd`)
+
+https://samba.tranquil.it/doc/en/samba_fundamentals/about_password_hash.html
+- 30 minut zabawy, ale trzeba było doinstalować `samba-dsdb-modules`. Pełna komenda wszystkiego co potrzebowałem
+```
+sudo apt-get install samba-dsdb-modules python3-ldb python3-samba ldb-tools
+```
+
+![{6B93B602-47BC-48B8-AD93-C9BD067C2676}](https://github.com/user-attachments/assets/cb20828f-a63e-4ec2-8cd0-9133856ac02c)
+
+![{8C7F5BD1-095E-45EF-8483-AC2DE0E4545C}](https://github.com/user-attachments/assets/1daf7996-8bdf-476f-bbe3-0e10df117824)
+
+- uncracable (using rockyou)
+
+![{4A11CEDE-B6E6-4F34-B5BD-73CAD4C00317}](https://github.com/user-attachments/assets/51a864ba-ca8a-4d4b-9899-ec9dedf128a2)
+
+hmmmmmmmm
+
+![{E4F3991B-135F-449B-B611-E496DB0C5041}](https://github.com/user-attachments/assets/a4cff72b-bede-47b9-9305-2720f7817d61)
+
+![{477A0C2B-3120-49F8-A5A4-068A2DC0D943}](https://github.com/user-attachments/assets/8fa08cde-0caa-4f9b-878c-140c8c40f0f4)
+
+ech przegapiłem jakiegoś usera xD
+
+- dobra własnie sobie uświadomiłem, że nic nie zrobiliśmy z portem 8200 na hoście nr 2. Pewnie tam siedzi flaga
+
+![{64011D13-AD9B-4612-9E33-40675A2A3042}](https://github.com/user-attachments/assets/edc19d7a-2da5-4057-bd34-cc8e88119f44)
+
+[https://medium.com/@STarXT/duplicati-bypassing-login-authentication-with-server-passphrase-024d6991e9ee](https://medium.com/@STarXT/duplicati-bypassing-login-authentication-with-server-passphrase-024d6991e9ee)
+chyba tego użyjemy
+
+widzimy jak to się tworzy ([https://github.com/duplicati/duplicati/issues/5197](https://github.com/duplicati/duplicati/issues/5197))
+```
+$.ajax({
+	url: './login.cgi',
+	type: 'POST',
+	dataType: 'json',
+	data: {'get-nonce': 1}
+})
+.done(function(data) {
+	var saltedpwd = CryptoJS.SHA256(CryptoJS.enc.Hex.parse(CryptoJS.enc.Utf8.parse($('#login-password').val()) + CryptoJS.enc.Base64.parse(data.Salt)));
+
+	var noncedpwd = CryptoJS.SHA256(CryptoJS.enc.Hex.parse(CryptoJS.enc.Base64.parse(data.Nonce) + saltedpwd)).toString(CryptoJS.enc.Base64);
+
+	$.ajax({
+		url: './login.cgi',
+		type: 'POST',
+		dataType: 'json',
+		data: {'password': noncedpwd }
+	})
+```
+
+i cośw tym stylu musimy dostać
+```
+var noncedpwd = CryptoJS.SHA256(CryptoJS.enc.Hex.parse(CryptoJS.enc.Base64.parse(data.Nonce) + saltedpwd)).toString(CryptoJS.enc.Base64);
+```
+
+wszystko opisane w instrukcji i jasne
+
+![{C60E7127-0765-48D0-A2C0-B9E4EBEB11F9}](https://github.com/user-attachments/assets/7ddd1b1b-5ba8-4044-a7a2-c873cd83bcb9)
+
+ale zanim to zrobimy musimy się trochę cofnąć i znaleźć duplicati db `2. Open Duplicati DB using any tool (like sqlite)`
+
+![{5F9EC9E4-B547-4E6E-A526-2C5E071560DD}](https://github.com/user-attachments/assets/3167c7be-6036-498c-a7a5-060ed7fd5d7f)
+
+mam (login on ftp as ftp_admin and dump it)
+
+![{1CA7CE01-ADF7-4F18-B6F2-1E6A48F8A701}](https://github.com/user-attachments/assets/38201156-056c-4793-bcb6-9d533a2c5888)
+
+![{DD2ED1F4-EA4C-4EC7-BF06-C1511A8B8FB2}](https://github.com/user-attachments/assets/8b951c87-32d3-48c9-ac1a-6cef30f38042)
+
 
