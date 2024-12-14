@@ -126,3 +126,7 @@ ooo pierwsza flaga.
 ![{6F23BAB2-1944-4459-8866-C9FBD3E8D15B}](https://github.com/user-attachments/assets/42283634-28fd-40df-880d-d4ad36cd4e2f)
 
 wstępnie nic ciekawego u innych userów.
+
+![{B9979DEE-0810-48A3-B445-5C9E056BF54E}](https://github.com/user-attachments/assets/04445f92-6eb2-4981-acdf-d5cb4dcc6895)
+
+o jednak klasyka nie weszła
