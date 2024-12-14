@@ -130,3 +130,7 @@ wstępnie nic ciekawego u innych userów.
 ![{B9979DEE-0810-48A3-B445-5C9E056BF54E}](https://github.com/user-attachments/assets/04445f92-6eb2-4981-acdf-d5cb4dcc6895)
 
 o jednak klasyka nie weszła
+
+Chwilkę błądziłęm, ale ogarnąłem, że da się zalogować do chata usernamem `uan@unintended.vl`
+
+![{2414CDD5-C0FF-4ACD-961E-481AA8F7791D}](https://github.com/user-attachments/assets/a9fe4e12-554b-44b7-bf08-24d2ed28e636)
