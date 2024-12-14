@@ -134,3 +134,49 @@ o jednak klasyka nie weszła
 Chwilkę błądziłęm, ale ogarnąłem, że da się zalogować do chata usernamem `uan@unintended.vl`
 
 ![{2414CDD5-C0FF-4ACD-961E-481AA8F7791D}](https://github.com/user-attachments/assets/a9fe4e12-554b-44b7-bf08-24d2ed28e636)
+
+![{078BB8D2-20FC-40B5-A20C-0509BBECBB9A}](https://github.com/user-attachments/assets/8889e123-3145-4f2f-9cdf-cb2383064009)
+
+dobra to w sumie szybki bruteforce powinien być.
+
+![{6249FA55-C772-45E4-B664-EB318815DBB5}](https://github.com/user-attachments/assets/4cf885e0-c7b5-44dd-a1a8-9340cf4094bc)
+
+![{20687F96-D54C-4DED-B7BC-52889DB3333C}](https://github.com/user-attachments/assets/c18e5d64-72c4-4856-b544-bc5db5de072e)
+
+![{D9DE04D3-92E9-40AC-A3F0-B901F60FAAA8}](https://github.com/user-attachments/assets/e3cbd979-2ef0-4171-80f5-b688e0d5f7e6)
+
+yeee
+
+![{4BA2CC69-E8F8-4D17-B62E-B1A5447FF0C4}](https://github.com/user-attachments/assets/8ccbe41e-c533-41cc-b86d-22b9c24ca3a9)
+
+jakieś hasełko mamy.
+- nawet działa :D
+
+![{28FCFB24-1FC4-41DE-BD50-CE4C5D1657B7}](https://github.com/user-attachments/assets/3b50d3e0-3c22-4551-8860-24f4c61668b6)
+
+grupa docker? No to sekalacja od ręki.
+
+![{9306FE97-545E-4212-94A6-5E6C076D33C7}](https://github.com/user-attachments/assets/379a7197-58c5-40c0-8549-8d2126b7d3e4)
+
+![{1C76F01D-FB22-410A-BA96-75BE612B4634}](https://github.com/user-attachments/assets/623522ac-62d0-419a-b9c9-cc1fe65ab2ec)
+
+![{2BCB699D-14C0-4EC4-849B-D6385F1117B3}](https://github.com/user-attachments/assets/2fe85b4b-3255-4a82-81af-ee86ce2ea6a6)
+
+server.py contain new password.
+
+fast escalation and go next
+
+![{558BFEA1-71A6-4671-B3AB-CD85B89D4BE7}](https://github.com/user-attachments/assets/985efc13-0ce5-4b17-91af-fd746b8a0a54)
+
+![{97CFF9EF-4445-4374-B05D-5A5963AA0689}](https://github.com/user-attachments/assets/f0d7dc12-7316-46c2-a2bc-bca77bdd1080)
+
+nasz nowy user ma dostęp do ciekawych rzeczy.
+- dump and extract
+
+![{137AA45F-C165-46E5-B365-D3762F19CBC8}](https://github.com/user-attachments/assets/005adb94-865e-4624-9be0-b64920c8181a)
+
+tutaj musiałem trochę doczytać. SAM.ldb może być ciekawy z tego zrozumiałem
+
+![{C40F40BE-E48D-4B42-9C6F-F9A4FCE0415D}](https://github.com/user-attachments/assets/0a34796f-6c9a-40ec-a125-5ac0645c135e)
+
+
