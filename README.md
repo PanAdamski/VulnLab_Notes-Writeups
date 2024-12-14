@@ -9,7 +9,7 @@ I will be posting notes/writings from the vulnlab site here. Sometimes they will
 | Build | :heavy_check_mark: | :heavy_check_mark: |
 | Data | :heavy_check_mark: | :heavy_check_mark: |
 | Down | :heavy_check_mark: | :heavy_check_mark: |
-| Escape | :x:| :x:|
+| Escape | :heavy_check_mark:| :heavy_check_mark:|
 | Feedback | :x:| :x:|
 | Forgotten | :x:| :x:|
 | Lock | :heavy_check_mark: | :heavy_check_mark: |
@@ -48,18 +48,18 @@ I will be posting notes/writings from the vulnlab site here. Sometimes they will
 
 
 # Chains
-| Machine | User Flag | User2 Flag | Root Flag |
-| --- | :---: | :---: | :---: |
-| Hybrid | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: |
-| Trusted | :heavy_check_mark:| |:heavy_check_mark:|
-| Heron | :heavy_check_mark:| :heavy_check_mark:|:heavy_check_mark:|
+| Machine | User Flag | User2 Flag | User3 Flag | Root Flag |
+| --- | :---: | :---: | :---: |  :---: |
+| Hybrid | :heavy_check_mark: | :heavy_check_mark: | | :heavy_check_mark: |
+| Trusted | :heavy_check_mark:| |:heavy_check_mark:| | | 
+| Heron | :heavy_check_mark:| :heavy_check_mark:|:heavy_check_mark:| |
 | Lustrous | :x:| :x:|:x:|
 | Mythical | :x:| :x:|:x:|
 | Puppet | :x:| :x:|:x:|
 | Reflection | :x:| :x:|:x:|
 | Tea | :x:| :x:|:x:|
 | Tengu | :x:| :x:|:x:|
-| Unintended | :x:| :x:|:x:|
+| Unintended | :heavy_check_mark:| :heavy_check_mark:|:x: | :heavy_check_mark:|
 | Control | :x:| :x:|:x:|
 | Intercept | :x:| :x:|:x:|
 | Kaiju | :x:| :x:|:x:|
