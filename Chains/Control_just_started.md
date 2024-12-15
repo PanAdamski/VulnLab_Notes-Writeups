@@ -4,7 +4,7 @@ Linux, Hard, created by **jkr**
 ![control_slide](https://github.com/user-attachments/assets/8f637798-e373-4b03-80e2-020092014368)
 
 ```
-10.10.179.101
+10.10.197.21
 22/tcp  open  ssh      OpenSSH 8.9p1 Ubuntu 3ubuntu0.1 (Ubuntu Linux; protocol 2.0)
 | ssh-hostkey: 
 |   256 be:fa:cf:c3:c8:b1:50:11:f2:b0:73:b8:c5:ad:3d:0b (ECDSA)
@@ -51,7 +51,7 @@ HOP RTT      ADDRESS
 1   32.30 ms 10.8.0.1
 2   32.40 ms 10.10.179.101
 
-Nmap scan report for 10.10.179.102
+Nmap scan report for 10.10.197.22
 Host is up (0.033s latency).
 Not shown: 65530 closed tcp ports (reset)
 PORT     STATE SERVICE  VERSION
@@ -60,7 +60,7 @@ PORT     STATE SERVICE  VERSION
 |   256 05:0f:88:bf:a3:a3:b9:f1:d7:82:fc:b1:92:19:90:ab (ECDSA)
 |_  256 0b:53:d6:5d:21:4a:64:1d:69:aa:bd:01:77:87:90:cc (ED25519)
 80/tcp   open  http     nginx
-|_http-title: Did not follow redirect to https://10.10.179.102/
+|_http-title: Did not follow redirect to https://10.10.197.22/
 | http-methods: 
 |_  Supported Methods: GET HEAD POST OPTIONS
 443/tcp  open  ssl/http nginx
@@ -110,7 +110,26 @@ PORT     STATE SERVICE  VERSION
 
 so we have some domains/subdomains
 ```
-10.10.179.102 os.control.vl
-10.10.179.101 wiki.intra.control.vl
+10.10.197.22 os.control.vl
+10.10.197.21 wiki.intra.control.vl
 ```
+
+```
+ffuf -u https://os.control.vl/ -w /usr/share/seclists/Discovery/DNS/subdomains-top1million-20000.txt -H "Host: FUZZ.control.vl" -c -mc all -fs 4
+ffuf -u https://wiki.intra.control.vl/ -w /usr/share/seclists/Discovery/DNS/subdomains-top1million-20000.txt -H "Host: FUZZ.intra.control.vl" -c -mc all  -fw 1842
+ffuf -u https://wiki.intra.control.vl/ -w /usr/share/seclists/Discovery/DNS/subdomains-top1million-20000.txt -H "Host: FUZZ.control.vl" -c -mc all -fw 1842
+ffuf -u https://os.control.vl:8443/ -w /usr/share/seclists/Discovery/DNS/subdomains-top1million-20000.txt -H "Host: FUZZ.control.vl" -c -mc all -fs 29
+
+```
+- nothing more
+
+clasic time:
+```
+ffuf -w ~/raft.txt -u https://os.control.vl/FUZZ -c -H 'User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/130.0.6723.70 Safari/537.36' -mc all -fs 19,0,4
+
+error                   [Status: 500, Size: 8, Words: 2, Lines: 1, Duration: 33ms]
+health                  [Status: 200, Size: 3, Words: 1, Lines: 1, Duration: 31ms]
+```
+
+
 
