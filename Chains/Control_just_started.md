@@ -276,3 +276,58 @@ o szybko poszło xD
 ![{E581BCA8-CCD0-4DC3-96DD-FBC57E6CA276}](https://github.com/user-attachments/assets/bc653048-e57a-4d4a-bce1-c0ba43adf17f)
 
 został root na `intra.control.vl`.
+Wracamy do naszego carve files gdzie pobierałem /etc/passwd. Tym razem sprawdzimy drugiego hosta.
+
+![{2B2C7944-B53B-4CD4-B77D-FA77285033BC}](https://github.com/user-attachments/assets/35453cb2-8e81-405c-8cc5-a648c2a58039)
+
+![{15CA0B7E-FA87-47FB-A093-1D0ACA228D82}](https://github.com/user-attachments/assets/9df47ae0-e798-4072-938a-34f6aeeda4f5)
+
+tym razem user to steven.
+
+![{9A76EB41-B05C-4999-816D-84EB183A2FBA}](https://github.com/user-attachments/assets/d4a1a80c-e21d-4157-ac1d-20a9091f1d53)
+
+próbujemy.
+
+![{CDEF52AE-9127-479A-BE26-AE7752ABF028}](https://github.com/user-attachments/assets/5618dbbf-11eb-4a45-8113-4ca4bdb4b578)
+
+file does not exist :/
+- trochę takich natrafiłem nieistniejących.
+
+![{CD2D0AE7-20FD-4F8D-82E7-67217773F2E5}](https://github.com/user-attachments/assets/8da8ffd2-ed6b-417b-a07c-168a68d121f3)
+
+ech zmęczenie widzę działa... xD
+ALE KOŃCU COŚ SIĘ POKAZAŁO (i turbo podobne do tego wyżej ech)
+
+![{C98492B3-7294-4667-89A5-568BFD89D866}](https://github.com/user-attachments/assets/3d9655d2-0b9a-44e2-a6ac-870a3bcea598)
+
+zatem czas na `/opt/provision/provision.sh`
+
+![{80B6214D-E55D-4F8B-B753-4AEA21396AE3}](https://github.com/user-attachments/assets/36f0765c-f853-4052-9543-dd7e29202959)
+
+Tak w duuuuzym skrócie to skrypt tworzy ograniczone środowisko uruchamiania poleceń zdalnie za pośrednictwem SSH, pozwalając jedynie na wykonanie określonych "modułów" dostępnych w wyznaczonym katalogu.
+
+Dobra zobaczmy zatem co tam siedzi. Możemy użyć małej sztuczki (mam nadzieję) czyli wpisać query `select path from file where path LIKE '/opt/provision/modules/%%';`
+
+![{8F3248A9-DCD5-4734-B900-1857B1AFE2AA}](https://github.com/user-attachments/assets/fe3ad01b-1cc2-4ccc-a6f8-63a58b57041e)
+
+![{ABB20851-818F-4803-AA1D-3300B4CD1C80}](https://github.com/user-attachments/assets/37202efc-4413-41f5-949b-c503f30c42c6)
+
+mamy 3 pliczki.
+```
+/opt/provision/modules/prov_df
+/opt/provision/modules/prov_osqd
+/opt/provision/modules/prov_uname
+```
+
+![{F84E381B-57DB-45DF-8DE4-9B7E22DFE29B}](https://github.com/user-attachments/assets/a13ac36f-b670-49ef-b58b-2b66a43d5361)
+
+pierwszy elf
+
+![{74051486-8313-4C7C-BCED-51B75BEBA892}](https://github.com/user-attachments/assets/cb3a99d5-110e-49b3-964f-52646b6a4872)
+
+drugi bash
+
+![{4B8D765D-B611-4A03-94C5-4CF0C88BA8E5}](https://github.com/user-attachments/assets/8bcb5397-05ae-4b4a-b6bf-66d374653824)
+
+trzeci elf.
+
