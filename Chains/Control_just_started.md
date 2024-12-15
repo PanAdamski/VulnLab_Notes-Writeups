@@ -331,3 +331,19 @@ drugi bash
 
 trzeci elf.
 
+jako, że zakładam, że nie trzeba reversoweać tych elfów to wróćmy do naszego bashowego skrypciku.
+- muszą być 2 argumenty.
+- to co jest pod tym url uruchamiane jest przez basha, a z wcześnejszych informacji wiemy, że działa jako root.
+
+![{806E590F-4630-4A65-B4F1-DBDEE48062AF}](https://github.com/user-attachments/assets/7aea7b8a-008f-4bc5-baab-1a485576bdd3)
+
+jeżeli dobrze wszystko rozumiem to możemy na innym serwerze hostować plik w katalogu, który nazwiemy tak jak chcemy np. `/super/easy/enroll.sh` i serwer się do tego odwoła jeżeli poprawnie dodamy regułę w configu nginixa.
+
+![{1DBC681E-B323-473E-A52C-F8A12378B982}](https://github.com/user-attachments/assets/d7477479-281c-4306-b1a9-c1bcdb912e50)
+
+lub nie musimy nawet edytować.
+
+![{ECED1763-A3B1-4DDD-90A0-F13CADAF2CD9}](https://github.com/user-attachments/assets/a49a28cd-ae76-4e8c-b03a-236927cec7b7)
+
+(yes. I prefer nano)
+
