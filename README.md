@@ -3,7 +3,7 @@ I will be posting notes/writings from the vulnlab site here. Sometimes they will
 
 # Machines
 | Machine | User Flag | Root Flag |
-| --- | :---: | :---: |c
+| --- | :---: | :---: |
 | Baby | :heavy_check_mark: | :heavy_check_mark: |
 | Barrier | :x:| :x:|
 | Build | :heavy_check_mark: | :heavy_check_mark: |
