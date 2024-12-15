@@ -71,17 +71,27 @@ I will be posting notes/writings from the vulnlab site here. Sometimes they will
 
 # RedTeams
 
+## Easy
+
 | Machine | Dominance Flag | Engineering Flag | Incursion Flag | Master Flag | Metal Flag | Remember Flag| Shortcut Flag|
 | --- | :---: | :---: | :---: |  :---: | :---: | :---: | :---: |
 | Ifrit | :x:| :x:|:x:|:x:| :x:|:x:|:x:|
 
+## Medium
+| Machine | A New Journey Flag | Been There Done That Flag | Digging Deeper Flag | Dominance Flag | Hidden In Plain Sight Flag | Humans Flag | Master Flag | That Escalated Quickly Flag | This Is Fine Flag | Well Managed Flag | Working As Intended Flag | You Must Be Kidding Flag |
+| --- | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: |
+| Wutai | :x: | :x: | :x: | :x: | :x: | :x: | :x: | :x: | :x: | :x: | :x: | :x: |
 
+## Hard
 | Machine | And So It Begins Flag | Carousel Flag | Crypto Is Fun Flag | Dominance Flag | Heavens Gate Flag | I Heard You Like JS Flag | Know Your Planets Flag | Lost And Found Flag | Master Flag | Old Is New Flag | One More Time Flag | Those Pesky Humans Flag |
 | --- | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: |
 | Shinra | :x: | :x: | :x: | :x: | :x: | :x: | :x: | :x: | :x: | :x: | :x: | :x: |
 
+## Insane
+| Machine | Breached Flag | Classico Flag | Drop D Flag | Exposed Flag | Forgotten Flag | Kerberos Flag | Level Up Flag | Master Flag | Open Door Policy Flag | Refreshments Flag | Side Quest Flag | The Hunt Begins Flag | Unpleasant Flag |
+| --- | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: |
+| Shiva | :x: | :x: | :x: | :x: | :x: | :x: | :x: | :x: | :x: | :x: | :x: | :x: | :x: |
 
-| Machine | A New Journey Flag | Been There Done That Flag | Digging Deeper Flag | Dominance Flag | Hidden In Plain Sight Flag | Humans Flag | Master Flag | That Escalated Quickly Flag | This Is Fine Flag | Well Managed Flag | Working As Intended Flag | You Must Be Kidding Flag |
-| --- | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: |
-| Wutai | :x: | :x: | :x: | :x: | :x: | :x: | :x: | :x: | :x: | :x: | :x: | :x: |
+
+
 
