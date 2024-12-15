@@ -115,3 +115,13 @@ nc -lvnp 443
 i na końcu wchodzimy na stronę
 
 ![{7E159FF4-D89C-4BF6-B124-C4C2B51EEE5D}](https://github.com/user-attachments/assets/ffac08b7-1f16-459a-a28b-d16add28c0fa)
+
+Jakieś credsy dali
+
+![{7939E0C3-8D40-4874-A5A9-842E54CD6D15}](https://github.com/user-attachments/assets/4346e438-65b2-4c1a-a101-63a78149fdb9)
+
+![{2B666E8A-CAD8-468B-A445-9C6CD68F44D3}](https://github.com/user-attachments/assets/cb9b7396-367c-4f47-9f5f-253fe1e1ab66)
+
+Hasło działa na roota.
+
+FINISH
