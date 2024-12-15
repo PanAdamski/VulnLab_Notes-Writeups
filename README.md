@@ -3,7 +3,7 @@ I will be posting notes/writings from the vulnlab site here. Sometimes they will
 
 # Machines
 | Machine | User Flag | Root Flag |
-| --- | :---: | :---: |
+| --- | :---: | :---: |c
 | Baby | :heavy_check_mark: | :heavy_check_mark: |
 | Barrier | :x:| :x:|
 | Build | :heavy_check_mark: | :heavy_check_mark: |
@@ -60,7 +60,7 @@ I will be posting notes/writings from the vulnlab site here. Sometimes they will
 | Tea | :x:| :x:|:x:|
 | Tengu | :x:| :x:|:x:|
 | Unintended | :heavy_check_mark:| :heavy_check_mark:|:x: | :heavy_check_mark:|
-| Control | :x:| :x:|:x:|
+| Control | :heavy_check_mark:| :heavy_check_mark:|:x:|
 | Intercept | :x:| :x:|:x:|
 | Kaiju | :x:| :x:|:x:|
 | Push | :x:| :x:|:x:|
