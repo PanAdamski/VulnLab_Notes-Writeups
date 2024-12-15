@@ -201,3 +201,78 @@ chyba możemy sobie dowolne JWT wygeenrować, ale.. i tak mamy exploit do tworze
 
 hasełko czy tam dwa
 
+aaaa moment. Te redisy czy inne to są chyba na tej domence gdzie nic nie mamy. To chyba dobry trop :D
+to lecimy. z `db.json` wiemy, że bazadanych jest na 5432 więc.. postgres jakby nie patrzeć.
+
+![{D20FDAB2-7588-41DC-B426-53ADC8E912C1}](https://github.com/user-attachments/assets/2cb8fd40-071b-4f10-95c6-e191c7e05dfe)
+
+o podziałało bez hasła wgl. TO szukamy czegoś
+```
+select * from admin_users;
+```
+
+![{3B376D91-1314-4C4B-937E-03EF6320514C}](https://github.com/user-attachments/assets/3a165de0-2eee-4836-a4a9-f611af26ccc8)
+
+- łamałem 10 minut na RTX3070Ti i nie złamało się więc uznaję, że to nie o to chodzi w zadaniu.
+- zatem zmienimy hasło po prostu
+
+![{5FE0D8F4-3B6F-4770-91CE-224E07833AB8}](https://github.com/user-attachments/assets/09299e85-2331-4d4c-97cf-1ffa594e6a4f)
+
+dobra zmieniło
+
+![{41DEF001-9514-4A8C-B045-EFB1A1800B6C}](https://github.com/user-attachments/assets/e6df0cb6-8fe9-433c-ba5d-a6b72b4d3047)
+
+![{291CDEE4-EEDD-499B-8AB2-CE6B4E69E783}](https://github.com/user-attachments/assets/7bfa901d-8b1c-40aa-96d8-901181e5d28c)
+
+![{1C89B187-6CA8-4984-A73F-C2F656D3B497}](https://github.com/user-attachments/assets/92196f81-81fe-4519-aa30-33ed597a954d)
+
+![{9B2DA7EC-0984-4672-A3BB-11A1D0F1E1C0}](https://github.com/user-attachments/assets/eec24e8d-379c-44fc-a192-dc837f4ed3fb)
+
+no i mamy dostęp.
+
+![{F9545C87-EC9E-45E6-BFCE-2C7AC4F7D9B0}](https://github.com/user-attachments/assets/6b2409de-96f5-46b8-8a35-4f4683a0c60e)
+
+
+![{2FF34733-4E62-4EB2-888A-A150DCFB7027}](https://github.com/user-attachments/assets/0379627a-c66c-4d41-b3ca-b552779721d6)
+
+jakieś query wykonuję sobie.
+
+nie mam pojęcia co robię. Po prostu klikam.
+W między czasie zalałem drugi sposób na zostanie adminem :D
+
+![{B8025520-FFBA-4549-A813-A3D245D0CFFE}](https://github.com/user-attachments/assets/232a9757-ae10-4e68-9c3f-c314a7ef9cf3)
+
+![{9879E031-D45E-4E92-BA6B-8F5D7AB2C494}](https://github.com/user-attachments/assets/8f553c91-ee89-44d0-ae02-4c26f91e7bbf)
+
+![{E9EDA8C9-9509-4223-95FC-C3E2B7B973F0}](https://github.com/user-attachments/assets/91ccb257-ea14-48a0-89f9-523375fea5c1)
+
+![{BA9E3727-2919-4A71-BFEC-B8D89AB6FF92}](https://github.com/user-attachments/assets/5ecb8682-4869-47c3-aab8-d6e1e7ddf4af)
+
+
+dobra coś mamy. Teraz pewnie klucz prywaty roota albo usera.
+
+![{58394931-75BD-4FEF-9028-0A876D24101C}](https://github.com/user-attachments/assets/322b35d5-097c-4a8c-9731-e2b0dc5f8d2b)
+
+![{A5AF0251-8DED-4B0B-B293-77EECE066BF8}](https://github.com/user-attachments/assets/bf3db597-f252-4a9c-b451-bf833dd5470a)
+
+kliknąłem i czekam
+
+![{DAF47716-A144-4F6F-91A5-6EE7CECC1484}](https://github.com/user-attachments/assets/92dc55a3-856f-4194-b593-4b24cf59043e)
+
+![{B816B70B-735E-4589-96FE-670641C736CD}](https://github.com/user-attachments/assets/12ac076b-a7bc-4353-af07-68c9e603007c)
+
+![id](https://github.com/user-attachments/assets/7fd1f9b7-9320-4362-b571-5ea32f69ce69)
+
+![{269248E8-DF09-4DC7-A0D1-9FC1FD0A0B44}](https://github.com/user-attachments/assets/d6414cf5-d455-460e-b3ff-6d2871589846)
+
+yeeee
+
+![{41303F29-D45A-4342-8DB0-1B479B27FBDB}](https://github.com/user-attachments/assets/c2d08d32-416a-446f-87b0-767eb4cf08e0)
+
+o szybko poszło xD
+
+![{3A5DE78B-849E-470E-92B9-BA3D5B145115}](https://github.com/user-attachments/assets/63149dd7-30ee-48bf-a902-b136ce8df147)
+
+![{E581BCA8-CCD0-4DC3-96DD-FBC57E6CA276}](https://github.com/user-attachments/assets/bc653048-e57a-4d4a-bce1-c0ba43adf17f)
+
+został root na `intra.control.vl`.
