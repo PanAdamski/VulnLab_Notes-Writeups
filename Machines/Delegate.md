@@ -1,6 +1,8 @@
 # Delegate
 Windows,Medium, created by **geiseric**
 
+![image](https://github.com/user-attachments/assets/46b6bfe1-3683-44fd-9c68-619751118123)
+
 ```
 nmap -Pn -v -p- --version-all -oA nmapFULL --max-rate 1500 -A 10.10.113.221
 sudo nmap -sU -Pn -A -F -v -oA nmaUDP --max-rate 1500 10.10.113.221
@@ -54,4 +56,35 @@ hmmmm. Zaskoczyli xD
 to mamy naszą A.Briggs.
 
 ![{5EEA8349-3920-44B8-87C9-04F9F16DC7B6}](https://github.com/user-attachments/assets/7f523a51-c3a0-472e-8d49-523e415d5249)
+
+![{AB91B6CC-2912-4CD0-8DD4-CCED4C71B9DB}](https://github.com/user-attachments/assets/876f7fc8-e562-420c-b040-38b29fbc8549)
+
+musiałem force po brakue ssl puścić, bo nie śmigało.
+
+```
+certipy-ad find -u A.Briggs -p 'P4ssw0rd1#123' -dc-ip 10.10.113.221 -scheme ldap -old-bloodhound
+bloodhound-python -d 'delegate.vl' -u 'A.Briggs' -p 'P4ssw0rd1#123' -ns 10.10.113.221 -dc DC1.delegate.vl -c all
+```
+
+![{088864BF-B242-434A-B4D9-751C9C292FB6}](https://github.com/user-attachments/assets/8220ff22-4894-4f43-8380-7dac7e6f1c94)
+
+o marnuję czas. Świetnie ;)
+
+![{287534F0-DD59-4EE2-8C34-365D29237F5B}](https://github.com/user-attachments/assets/006f9af9-4494-4722-b996-a801b8e5c007)
+
+wygląda jak easy, a nie medium, ale zobaczmy.
+z ciekawości użyłem obu tooli, ale zostanę przy pierwszym.
+
+![{1DFA3DDE-2025-4795-A27F-C81A11BF00AF}](https://github.com/user-attachments/assets/2ec8abf5-5ba6-4be6-b8d1-7ab455dd0beb)
+
+![hash](https://github.com/user-attachments/assets/5fc0c5cd-040b-4c4f-a686-91e07867f2d6)
+
+Dobra mamy wjazd po winrm
+
+![{9C5B3579-44FB-483D-9CE2-7DBE4C1B84CF}](https://github.com/user-attachments/assets/c5b8a012-2f91-49f7-9b98-c29effc08042)
+
+ciekawe rzeczy to `delegation admins` oraz `SeEnableDelegationPrivilege`.
+Na wiki dostajemy 2 linki
+[https://www.netspi.com/blog/technical-blog/network-penetration-testing/machineaccountquota-is-useful-sometimes/](https://www.netspi.com/blog/technical-blog/network-penetration-testing/machineaccountquota-is-useful-sometimes/)
+[https://dirkjanm.io/krbrelayx-unconstrained-delegation-abuse-toolkit/](https://dirkjanm.io/krbrelayx-unconstrained-delegation-abuse-toolkit/)
 
