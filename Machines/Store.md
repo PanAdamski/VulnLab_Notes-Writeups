@@ -1,6 +1,9 @@
 # Store
 Linux, Hard, created by **xct**
 
+![Uploading store_slide.png…]()
+
+
 ```
 22/tcp   open  ssh     OpenSSH 8.9p1 Ubuntu 3ubuntu0.1 (Ubuntu Linux; protocol 2.0)
 5000/tcp open  http    Node.js (Express middleware)
@@ -302,5 +305,25 @@ widzimy jakiś dodatkowy port 9515
 
 ![{2AE338CB-9E6D-4933-B909-E4AAB40891ED}](https://github.com/user-attachments/assets/ac5ac5c1-a00c-435e-b942-27e2936ed4a0)
 
-wygląda jakby to mogło być powiazane
+wygląda jakby to mogło być powiazane.
+
+Do finalnej exploitacji potrzebujemy shella w elfie więc najprościej msfvenom
+
+
+![{2AC008BE-BF27-4D21-838C-239DABFE77C5}](https://github.com/user-attachments/assets/41000af6-acb8-4ee2-b3bd-dc2966f1d881)
+
+
+![{CBB3BC70-7D60-4D1E-AE3F-2EA65E0C7EFE}](https://github.com/user-attachments/assets/98970fa7-60ad-4bb8-9b37-b1717febec50)
+
+
+![{B7D1B898-97E0-48DD-B09A-8640E8002806}](https://github.com/user-attachments/assets/a8b6c431-b771-4082-b57a-c69b72f7894c)
+
+
+![{270FE613-330D-47E3-B197-2CFC1C46361F}](https://github.com/user-attachments/assets/06e7155b-5477-4220-b319-08f42d138390)
+
+
+![{59070B59-B310-4A8B-8337-8E4547D6F784}](https://github.com/user-attachments/assets/8cf6a307-443e-4c3f-ad2a-2ba8e6684c12)
+
+
+FINISH
 
