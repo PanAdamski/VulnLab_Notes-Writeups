@@ -40,7 +40,7 @@ I will be posting notes/writings from the vulnlab site here. Sometimes they will
 | Race | :x:| :x:|
 | Rainbow2 | :x:| :x:|
 | Redelegate | :x:| :x:|
-| Store | :x:| :x:|
+| Store | :heavy_check_mark:| :heavy_check_mark:|
 | Ten | :x:| :x:|
 | Reaper | :x:| :x:|
 | Reaper2 | :x:| :x:|
