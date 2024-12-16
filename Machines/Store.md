@@ -213,4 +213,29 @@ tak z ciekawości sprawdziłem czy jest store 2 i 1
 
 boooring.
 
+![env](https://github.com/user-attachments/assets/39f2dbe0-e10a-47bb-a3a4-de1035e6f762)
+
+o coś ciekawego. Ciekawe czy uda się pivotować z ssh czy jakieś dziwne ssrfy trzeba będzie szukac.
+
+![{8F6EBAE6-938D-4E05-81F1-70960BE506F7}](https://github.com/user-attachments/assets/53368942-f4ed-45b0-8f3f-af70c030ddc7)
+
+![{F85E0D9A-D168-4FBD-A03A-AE54D41FB46A}](https://github.com/user-attachments/assets/3b348218-c867-4c0a-a08c-9c19f16ebb8d)
+
+WIDZĘ moje pliki. Czyli pewnie trzeba poszukać dodatkowej usługi
+ale.. sprowadzić tą, którą już znamy na poracie 9231.
+
+![{79CCA834-15FC-455A-A3E2-10283D0C9CC7}](https://github.com/user-attachments/assets/f387b3c6-d164-4a90-a8dc-39f49d516dd6)
+
+![{EE940A5E-CDFF-4AC6-A742-D90170162DFF}](https://github.com/user-attachments/assets/9a842ed6-aecc-4509-bca2-843622142a78)
+
+przy okazji są 3 różne
+
+![{D604DC13-9B15-42A0-A449-6B7A8DBAC8C6}](https://github.com/user-attachments/assets/b3bfe181-5033-428d-8ed3-3593f6cd0692)
+
+```
+https://nodejs.org/en/learn/getting-started/debugging
+https://book.hacktricks.xyz/pl/linux-hardening/privilege-escalation/electron-cef-chromium-debugger-abuse
+```
+
+
 
