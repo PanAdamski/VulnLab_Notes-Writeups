@@ -22,7 +22,7 @@ I will be posting notes/writings from the vulnlab site here. Sometimes they will
 | Breach | :heavy_check_mark: | :heavy_check_mark: |
 | Bruno | :x:| :x:|
 | Cicada | :x:| :x:|
-| Delegate | :x:| :x:|
+| Delegate | :heavy_check_mark:| :x:|
 | Iasvm | :x:| :x:|
 | Job | :x:| :x:|
 | Media | :x:| :x:|
