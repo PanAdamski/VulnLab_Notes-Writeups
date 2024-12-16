@@ -184,4 +184,18 @@ Failure to comply with these guidelines may result in disciplinary action, inclu
 For any questions or concerns regarding these guidelines, please contact the IT department at [Contact Information].
 ```
 
+dobra wróćmy jeszcze może
+
+![{BBC43F39-0718-4955-9773-A17000F1EAFC}](https://github.com/user-attachments/assets/db200dca-c4f7-44ad-a270-00706e92f123)
+
+brak
+
+![{E4623895-F228-405B-9C3D-E9EF09D03E05}](https://github.com/user-attachments/assets/34cdbb8b-8ef1-4de2-b4c6-8b91c02afbc7)
+
+i w końcu coś.
+```
+Elliot.Yates
+Thomas.Powell
+```
+
 
