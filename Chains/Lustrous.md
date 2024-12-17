@@ -286,3 +286,9 @@ impacket-reg lustrous.vl/'tony.ward':'< heheheh nope>'@10.10.214.133 save -keyNa
 ![{16222F8B-F513-4B64-8FEF-225ED08D5173}](https://github.com/user-attachments/assets/6ebc5d2f-66d9-4920-beef-419839063e65)
 
 ![final2](https://github.com/user-attachments/assets/914bdfc8-bdc3-4488-a580-24a0970828aa)
+
+![final3](https://github.com/user-attachments/assets/51e88033-7780-4adc-b76f-62fa25dbad6d)
+
+hash użyty tutaj to hash maszynowy.
+
+po winrm wjazd i gotowe
