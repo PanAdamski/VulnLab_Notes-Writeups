@@ -476,5 +476,10 @@ rsync --version
 ssh -V
 ```
 
+![{79985A87-0B8D-4F4F-8CFE-1E6A32C885A3}](https://github.com/user-attachments/assets/b30d5875-2c1b-40dc-abcb-433b36d06de7)
 
+dobra nie widzę dużo. Poskanujemy trochę
+- znalazłem na internetach. Nie testowałem wcześniej `https://github.com/elddy/NimScan`
+
+- 
 
