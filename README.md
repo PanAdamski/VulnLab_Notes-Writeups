@@ -26,7 +26,7 @@ I will be posting notes/writings from the vulnlab site here. Sometimes they will
 | Iasvm | :x:| :x:|
 | Job | :x:| :x:|
 | Media | :heavy_check_mark:| :heavy_check_mark:|
-| Phantom | :x:| :x:|
+| Phantom | :heavy_check_mark:| :heavy_check_mark:|
 | Rainbow | :x:| :x:|
 | Sendai | :x:| :x:|
 | Slonik | :heavy_check_mark: | :heavy_check_mark: |
