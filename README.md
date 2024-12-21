@@ -20,7 +20,7 @@ I will be posting notes/writings from the vulnlab site here. Sometimes they will
 | Baby2 | :heavy_check_mark: | :heavy_check_mark: |
 | Bamboo | :heavy_check_mark:| :heavy_check_mark:|
 | Breach | :heavy_check_mark: | :heavy_check_mark: |
-| Bruno | :x:| :x:|
+| Bruno | :heavy_check_mark:| :heavy_check_mark:|
 | Cicada | :x:| :x:|
 | Delegate | :heavy_check_mark:| :x:|
 | Iasvm | :x:| :x:|
