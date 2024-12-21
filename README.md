@@ -25,7 +25,7 @@ I will be posting notes/writings from the vulnlab site here. Sometimes they will
 | Delegate | :heavy_check_mark:| :x:|
 | Iasvm | :x:| :x:|
 | Job | :x:| :x:|
-| Media | :x:| :x:|
+| Media | :heavy_check_mark:| :heavy_check_mark:|
 | Phantom | :x:| :x:|
 | Rainbow | :x:| :x:|
 | Sendai | :x:| :x:|
