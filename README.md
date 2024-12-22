@@ -30,7 +30,7 @@ I will be posting notes/writings from the vulnlab site here. Sometimes they will
 | Rainbow | :x:| :x:|
 | Sendai | :x:| :x:|
 | Slonik | :heavy_check_mark: | :heavy_check_mark: |
-| Sweep | :x:| :x:|
+| Sweep | :heavy_check_mark:| :heavy_check_mark:|
 | Unchained | :x:| :x:|
 | Watcher | :x:| :x:|
 | Atlas | :x:| :x:|
