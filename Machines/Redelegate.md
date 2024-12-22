@@ -107,8 +107,5 @@ SELECT SUSER_SID('REDELEGATE\Domain Admins')
 
 https://www.netspi.com/blog/technical-blog/network-penetration-testing/hacking-sql-server-procedures-part-4-enumerating-domain-accounts/
 
-![{3F8F2F10-A138-478A-ABD9-D03069A7420B}](https://github.com/user-attachments/assets/e1286f51-fc03-44d3-8d85-16b8a60bb32c)
-
-coś tam userów można enumerować to sobie enumerujemy.
 
 
