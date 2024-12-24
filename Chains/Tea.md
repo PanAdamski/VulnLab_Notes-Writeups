@@ -130,5 +130,58 @@ i mamy to
 ![{65326E1F-3156-41F5-9D57-1115049B6BA8}](https://github.com/user-attachments/assets/b52a7459-5007-49bf-8163-6a7b95650488)
 
 chyba mam za nowego bloodhound :/
+- Ale to oleję. Wiemy, że mamy coś z lapsem więc spróbuję zobaczyć czy mamy uprawnienia do czytania hasła z LAPS po prostu z powershella (bloodhound nie robi jakiejś magi. To tylko zbiór komend xd)
+
+![{938D800B-51E0-45DD-AFE0-7B9A99B64E3F}](https://github.com/user-attachments/assets/5f2771c8-f223-48b8-a121-892b666ccf4b)
+
+Możemy.
+
+![asplaintext](https://github.com/user-attachments/assets/c73cb875-b51a-47bc-8e12-359a10129e0d)
+
+- próbuję uruchomić drugą sesję slivera jako administrator, ale... składnia mi się działa.
+- Poszedłem na RDP :D
+
+![{84EFACF5-2B7E-4442-B20E-247C471D14F2}](https://github.com/user-attachments/assets/1f6c156a-bd55-49c1-8a66-a8ea7a30f563)
+
+
+![{F3ABBF20-62F8-49A2-BFEE-BD850CA5CA3C}](https://github.com/user-attachments/assets/de7b383d-335f-41e0-b17e-61f310c7b756)
+
+no to została nam jedna flaga
+- szukając eskalacji możemy wrócic to tego co widzieliśmy.
+
+![{044CA1EE-36B1-49E7-AC3B-76DAB67A96DB}](https://github.com/user-attachments/assets/c2ceb26f-b751-4409-bd7e-e41f037f6011)
+
+![{CB905CF4-A02E-429A-87F8-220C90BA32A8}](https://github.com/user-attachments/assets/fe883697-a3e7-45f4-9ac8-e11813a9313d)
+
+![{74B36F89-7BDA-47B8-8CFA-234150C6B61B}](https://github.com/user-attachments/assets/8d1c5797-7a0d-478f-8558-e1eb11b36102)
+
+
+wygląda jakby pasowało :D
+
+o to też wygląda jakby pasowało `https://github.com/techspence/SharpWSUS.git`
+
+![{F9F6FFEF-5D9D-4BB8-81FE-7E55CB146C0F}](https://github.com/user-attachments/assets/62797a22-a4b4-483a-a53c-5b4466d738a1)
+
+pobrałem sobie
+
+![{E7DCFFB1-2E15-45C3-B112-506A6EDD295F}](https://github.com/user-attachments/assets/c3261892-4724-4fc5-8fcb-6e305e4fa03c)
+
+```
+sharpwsus.exe create /payload:"C:\_install\PSExec64.exe" /args:"-accepteula -s -d cmd.exe /c \\"net user Hollow Password1! add && net localgroup administrators Hollow /add\\""
+```
+
+![{89AD566F-ACFE-4BDF-AA01-D1CB182F9052}](https://github.com/user-attachments/assets/bd6f2c71-39cf-4740-a1bc-94dc3eca1b00)
+
+
+![{18E78348-719E-4566-ACC6-B94B17D963E7}](https://github.com/user-attachments/assets/75305924-6f30-4eb5-b658-dd81a52bf56b)
+
+![{5C7AF4FE-AAB0-4D85-A78F-A2613A4BAF09}](https://github.com/user-attachments/assets/416febc8-7024-40b4-ad5f-ec3cbd8e2550)
+
+jakoś po minucie mamy tutaj update
+
+![{58FC3C4E-74C6-4AF5-8BE1-6D478D1D8952}](https://github.com/user-attachments/assets/224c3ea8-9126-4bb8-8b25-17c4effca655)
+
+po kolejnych 3 minutach nie widzimy naszego usera :(
+
 
 
