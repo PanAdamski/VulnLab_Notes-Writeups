@@ -53,7 +53,7 @@ I will be posting notes/writings from the vulnlab site here. Sometimes they will
 | Hybrid | :heavy_check_mark: | :heavy_check_mark: | | :heavy_check_mark: |
 | Trusted | :heavy_check_mark:| |:heavy_check_mark:| | | 
 | Heron | :heavy_check_mark:| :heavy_check_mark:|:heavy_check_mark:| |
-| Lustrous | :heavy_check_mark:|  |:heavy_check_mark:|
+| Lustrous | :heavy_check_mark:|  | |:heavy_check_mark:|
 | Mythical | :x:| :x:|:x:|
 | Puppet | :x:| :x:|:x:|
 | Reflection | :x:| :x:|:x:|
