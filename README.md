@@ -57,7 +57,7 @@ I will be posting notes/writings from the vulnlab site here. Sometimes they will
 | Mythical | :x:| :x:|:x:|
 | Puppet | :x:| :x:|:x:|
 | Reflection | :x:| :x:|:x:|
-| Tea | :x:| :x:| |:x: |
+| Tea | :heavy_check_mark:| :heavy_check_mark:| |:x: |
 | Tengu | :x:| :x:|:x:|
 | Unintended | :heavy_check_mark:| :heavy_check_mark:|:x: | :heavy_check_mark:|
 | Control | :heavy_check_mark:| :heavy_check_mark:|:x:|
