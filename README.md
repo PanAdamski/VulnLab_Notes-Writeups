@@ -58,7 +58,7 @@ I will be posting notes/writings from the vulnlab site here. Sometimes they will
 | Puppet | :x:| :x:|:x:|
 | Reflection | :x:| :x:|:x:|
 | Tea | :heavy_check_mark:| :heavy_check_mark:| |:x: |
-| Tengu | :x:| :x:|:x:|
+| Tengu | :heavy_check_mark:| :heavy_check_mark:|:heavy_check_mark:|
 | Unintended | :heavy_check_mark:| :heavy_check_mark:|:x: | :heavy_check_mark:|
 | Control | :heavy_check_mark:| :heavy_check_mark:|:x:|
 | Intercept | :x:| :x:|:x:|
