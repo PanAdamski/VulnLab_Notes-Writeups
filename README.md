@@ -51,14 +51,14 @@ I will be posting notes/writings from the vulnlab site here. Sometimes they will
 | Machine | User Flag | User2 Flag | User3 Flag | Root Flag |
 | --- | :---: | :---: | :---: |  :---: |
 | Hybrid | :heavy_check_mark: | :heavy_check_mark: | | :heavy_check_mark: |
-| Trusted | :heavy_check_mark:| |:heavy_check_mark:| | | 
-| Heron | :heavy_check_mark:| :heavy_check_mark:|:heavy_check_mark:| |
+| Trusted | :heavy_check_mark:| ||:heavy_check_mark:| | | 
+| Heron | :heavy_check_mark:| :heavy_check_mark: | |:heavy_check_mark:| |
 | Lustrous | :heavy_check_mark:|  | |:heavy_check_mark:|
 | Mythical | :x:| :x:|:x:|
 | Puppet | :x:| :x:|:x:|
 | Reflection | :x:| :x:|:x:|
 | Tea | :heavy_check_mark:| :heavy_check_mark:| |:x: |
-| Tengu | :heavy_check_mark:| :heavy_check_mark:|:heavy_check_mark:|
+| Tengu | :heavy_check_mark:| :heavy_check_mark:| | :heavy_check_mark:|
 | Unintended | :heavy_check_mark:| :heavy_check_mark:|:x: | :heavy_check_mark:|
 | Control | :heavy_check_mark:| :heavy_check_mark:|:x:|
 | Intercept | :x:| :x:|:x:|
