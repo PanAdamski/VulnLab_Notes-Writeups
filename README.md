@@ -11,7 +11,7 @@ I will be posting notes/writings from the vulnlab site here. Sometimes they will
 | Down | :heavy_check_mark: | :heavy_check_mark: |
 | Escape | :heavy_check_mark:| :heavy_check_mark:|
 | Feedback | | :heavy_check_mark:|
-| Forgotten | :x:| :x:|
+| Forgotten | :heavy_check_mark:| :heavy_check_mark:|
 | Lock | :heavy_check_mark: | :heavy_check_mark: |
 | Manage | :heavy_check_mark: | :heavy_check_mark: |
 | Retro | :heavy_check_mark: | :heavy_check_mark: |
