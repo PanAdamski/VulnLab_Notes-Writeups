@@ -34,7 +34,7 @@ I will be posting notes/writings from the vulnlab site here. Sometimes they will
 | Unchained | :x:| :x:|
 | Watcher | :x:| :x:|
 | Atlas | :x:| :x:|
-| Dump | :x:| :x:|
+| Dump | :heavy_check_mark:| :x:|
 | Job2 | :x:| :x:|
 | Lustrous2 | :x:| :x:|
 | Race | :x:| :x:|
