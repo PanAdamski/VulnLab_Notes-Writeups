@@ -180,5 +180,25 @@ wykorzystując jedną z najprostszych metod do enumeracji userów znajdujemy has
 - dwóch userów takie ma
 - to prawdopodbnie honeypot users :(
 
+Fajnie byłoby jakoś sieć poskanować, ale bez wrzucania dodatkowych tooli.
+- ale nie umiem tego zrobić więc chyba załaduję chisla xD
+
+![{A70CE51F-1596-4080-8B6B-C540F5730656}](https://github.com/user-attachments/assets/fa356d46-e443-4ce0-8b9f-b9ed90bc83c5)
+
+w sumie czułem, że jakby to tak działało to byłoby za pięknie. W takim razie sliver też odpada.
+- pomyślałem o ssh, które jest wbudowane w kazdy windows serwer... tutaj nie jest
+
+Żeby nie budzić EDRa wpisywaniem `ipconfig` zerknimy na DCka za pomocą GUI.
+
+![{CA3DD4BD-24E7-4384-9B8C-7D4938872AAC}](https://github.com/user-attachments/assets/7e87f24d-e22f-495e-bb0f-13466086cd3a)
+
+wiemy, że DC (dns serwer) to `172.16.41.14`.
+
+Sprawdzam share'y na tym DCku
+
+![{B547A980-2E71-4C93-95CA-9225C951C7C5}](https://github.com/user-attachments/assets/f21067c9-e914-4c35-b753-58ca4952f2e2)
+
+- puste foldery
+
 
 
