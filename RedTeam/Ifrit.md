@@ -200,5 +200,9 @@ Sprawdzam share'y na tym DCku
 
 - puste foldery
 
+Wróciłem do tego ssh, bo coś mi mocno śmierdzi.
 
+![{23B6C5EE-65B7-4044-9277-A9EEDFBC7C1A}](https://github.com/user-attachments/assets/87a9e61a-8e35-4677-a573-846217bdd370)
+
+*sprawdź net view \\172.16.41.14\ jutro*
 
