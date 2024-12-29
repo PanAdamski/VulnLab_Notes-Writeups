@@ -353,3 +353,7 @@ jednakże nie wydaje się to być prosty przypadek.
 ![{0C6455B2-169E-42A2-B762-F2042F0C7620}](https://github.com/user-attachments/assets/59d8a8ee-a9fb-4605-9af8-e03586e3afa9)
 
 jeszcze sobie fake lnk stworzyłem i czas na spacerek/przerwę
+
+![{62223086-A267-4EC0-8078-4F081CEB1E49}](https://github.com/user-attachments/assets/3e21f536-0262-49ee-ab70-b83fa2b6a1dd)
+
+działa, bo jak wszedłem to hash od ręki
