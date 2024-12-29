@@ -357,3 +357,19 @@ jeszcze sobie fake lnk stworzyłem i czas na spacerek/przerwę
 ![{62223086-A267-4EC0-8078-4F081CEB1E49}](https://github.com/user-attachments/assets/3e21f536-0262-49ee-ab70-b83fa2b6a1dd)
 
 działa, bo jak wszedłem to hash od ręki
+- nic się nie złapało, ale zostawię.
+
+`certipy-ad` pokazuje, że nie ma CAs.
+
+szczerze to nie widzę zupełnie nic ciekawego. Chyba trzeba wrócić do tego, że mamy dostęp do tego komputera albo znaleźc jakiś LPE.
+
+![{9BE9CEC9-58E9-4D15-8569-9EFA163922EE}](https://github.com/user-attachments/assets/4bb90d73-6037-444a-a8f3-5b65178e4942)
+
+![{E4878F08-5285-41E7-9264-C3B12DBB1876}](https://github.com/user-attachments/assets/cacf3ec9-79e0-4045-b19c-a075967005f2)
+
+zbieram komputery, które są w sieci i sprawdzam jakie mają adresy IP.
+```
+DEV05.eu-ifrit.vl [172.16.41.40]
+SQL03.eu-ifrit.vl [172.16.41.250]
+
+```
