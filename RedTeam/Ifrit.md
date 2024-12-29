@@ -1,4 +1,4 @@
-# Ifrit
+![{F176E7DE-F6AC-474C-AE17-34E35FEDAF9A}](https://github.com/user-attachments/assets/2a639454-3172-4044-ac09-c29ae2d23914)# Ifrit
 Mixed, Easy, created by **xct**
 
 ![ifrit_slide](https://github.com/user-attachments/assets/e26e203b-cc12-4d1b-9e36-84a0a07e24bf)
@@ -373,3 +373,30 @@ DEV05.eu-ifrit.vl [172.16.41.40]
 SQL03.eu-ifrit.vl [172.16.41.250]
 
 ```
+
+enumeruję sobie i EDR milczy więc jest git
+
+![{BE749BF7-C416-4EF3-BB1D-5EF3164B448E}](https://github.com/user-attachments/assets/63216b1b-887c-4cae-b788-c61e502c2ad0)
+
+![{459DD151-6BF9-4491-8D7B-7A293539FA20}](https://github.com/user-attachments/assets/63f7d827-f67d-42ac-928f-98b74fd23dbc)
+
+zamontowałem sobie.
+
+![{6E9FA364-0817-440A-9285-12E6FE59AD3A}](https://github.com/user-attachments/assets/a62a0490-344f-4f76-a6e1-6d86c5020249)
+
+sortujemy po dacie modyfikacji.
+
+![{6DA527EF-1B57-4885-8CBB-63A8E6F4D74D}](https://github.com/user-attachments/assets/f20b997a-eaa8-4cc1-a0e7-21052b46fcc7)
+
+o widzę firefox. Wyciągamy
+
+![{1E61C348-E90E-4376-AC44-40E9203475FA}](https://github.com/user-attachments/assets/5daa93b5-caed-4ae3-b733-fd55522f28aa)
+
+oo hasło mamy i gita.
+Ładujemy się tam burpem.
+
+![{94299271-0F6F-4DDD-BE16-195A2613CF4D}](https://github.com/user-attachments/assets/96f1acbd-0117-4e3b-971a-be80bfbbd095)
+
+![{F176E7DE-F6AC-474C-AE17-34E35FEDAF9A}](https://github.com/user-attachments/assets/eb4544bd-e79e-40ff-8554-1921a188b1ff)
+
+mamy też nową domenkę. siem.ifrit.vl
