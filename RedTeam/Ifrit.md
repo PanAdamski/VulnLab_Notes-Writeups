@@ -1,4 +1,4 @@
-![{F176E7DE-F6AC-474C-AE17-34E35FEDAF9A}](https://github.com/user-attachments/assets/2a639454-3172-4044-ac09-c29ae2d23914)# Ifrit
+# Ifrit
 Mixed, Easy, created by **xct**
 
 ![ifrit_slide](https://github.com/user-attachments/assets/e26e203b-cc12-4d1b-9e36-84a0a07e24bf)
@@ -401,6 +401,8 @@ oo hasło mamy i gita.
 
 mamy też nową domenkę. siem.ifrit.vl
 
+![{F176E7DE-F6AC-474C-AE17-34E35FEDAF9A}](https://github.com/user-attachments/assets/2a639454-3172-4044-ac09-c29ae2d23914)
+
 ![{5E0FD3A2-A26F-429E-A3A0-6BEBDB2D4FCF}](https://github.com/user-attachments/assets/3d997662-0adf-4dc9-a386-e177ff282593)
 
 na poracie 13300 mamy command injeciton `wmic ${query}`.
@@ -413,3 +415,30 @@ dobra wiemy gdzie to jest.
 
 ![{BA8C4181-82A3-4349-83F6-AADCB14DB743}](https://github.com/user-attachments/assets/7c85e94c-0969-4f24-8c2b-9bd0f48c9fba)
 
+![{8FD0DE20-94C4-4A7F-86A2-081ECD106CD9}](https://github.com/user-attachments/assets/1ea196ae-3a59-42e2-8c51-c437ffe1bade)
+
+dobra mamy normalna komendę.
+
+![{81C0E071-A161-4200-B915-A17C8449D353}](https://github.com/user-attachments/assets/25e8b96a-ada3-457a-bdb3-f309772d3dee)
+
+o i działa. To ładujemy rce.
+
+![{1287FCA5-525F-4672-B160-208C611424B3}](https://github.com/user-attachments/assets/d7cf91e7-2275-4ccf-84c5-735767a8bc77)
+
+![{A00AA781-B53A-4DA5-A944-6A0C92DE63AB}](https://github.com/user-attachments/assets/7ed00a12-bc24-457e-be17-64411bcff35f)
+
+(tak wiem, że whoami triggeruje EDRa)
+
+Bawię się tym co wykrywa EDR i testuję komendy.
+
+![{C787F78A-8106-42C3-8A7F-7FA45533EE34}](https://github.com/user-attachments/assets/8b829485-7097-4915-9afd-f50b912ce37c)
+
+Przy okazji wiemy, że na windowsie jest python.
+
+![{2A3D0055-A985-4E3D-97A0-4855872DE1CC}](https://github.com/user-attachments/assets/1e3e5061-c2e6-4d44-877d-cd5c264c0baa)
+
+![{4FD1C7F0-BB54-41BD-9592-EE8D0B5C9AAB}](https://github.com/user-attachments/assets/86a5839e-16b6-472b-a9da-77f3884c20b2)
+
+![{A5952953-3CCC-49CF-B936-9515EBEFA824}](https://github.com/user-attachments/assets/e6849aa7-7d70-4d83-bd23-be9ec80586d1)
+
+hmmmm chyba znalazłem rozwiązanie naszego problemu z komputerem. Logika podpowiada, że trzeba przejąć SYSTEM na DEV05, wyciągnąć hash maszynowy i użyć go do ataku, który pozwoli nam DCka przejąć
