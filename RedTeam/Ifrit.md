@@ -400,3 +400,16 @@ oo hasło mamy i gita.
 ![{F176E7DE-F6AC-474C-AE17-34E35FEDAF9A}](https://github.com/user-attachments/assets/eb4544bd-e79e-40ff-8554-1921a188b1ff)
 
 mamy też nową domenkę. siem.ifrit.vl
+
+![{5E0FD3A2-A26F-429E-A3A0-6BEBDB2D4FCF}](https://github.com/user-attachments/assets/3d997662-0adf-4dc9-a386-e177ff282593)
+
+na poracie 13300 mamy command injeciton `wmic ${query}`.
+
+![{C5AC0004-B06D-49D4-AEB6-56DBAD9E9740}](https://github.com/user-attachments/assets/491c0a1f-4510-48a7-a893-67f1b98a1ffc)
+
+dobra wiemy gdzie to jest.
+
+![{EECB83C2-7DF8-4958-B592-24144BC2074D}](https://github.com/user-attachments/assets/70d8ae7d-0284-4b08-a7d5-512fffd57918)
+
+![{BA8C4181-82A3-4349-83F6-AADCB14DB743}](https://github.com/user-attachments/assets/7c85e94c-0969-4f24-8c2b-9bd0f48c9fba)
+
