@@ -206,3 +206,148 @@ Wróciłem do tego ssh, bo coś mi mocno śmierdzi.
 
 *sprawdź net view \\172.16.41.14\ jutro*
 
+Dziiiwne. Wczoraj `ssh` nie działało, a dzisiaj działa.
+
+![{D1CEBAF7-2A10-474B-8178-2EE33A5CDD0B}](https://github.com/user-attachments/assets/4bfbdaf7-413a-4273-8d53-a1751014fe9e)
+
+No to zrobię sobie revproxy przez ssh łącząc się do siebie i powinno być ez.
+
+![{F874824F-C82A-4D55-BF94-8C29D90826AD}](https://github.com/user-attachments/assets/c3c7d37d-dac3-4bc7-b5c0-7d19f7521042)
+
+```
+ssh kali@10.8.1.184 -p 2137 -R 1080 -N
+```
+Teraz można sieć skanować.
+- zrobię to mało redteamowo, żeby zobaczyć czy EDR coś pokaże.
+
+![{5FC56815-D54B-42B0-BF78-8D12E0DCE1B6}](https://github.com/user-attachments/assets/fd2752ae-abf4-4aac-8a44-8a26b68606e6)
+
+![{924B9948-F51B-4B2A-AE7A-018A8D64003D}](https://github.com/user-attachments/assets/d2c1159f-2ac3-4036-8191-eb366c7b32de)
+
+hmmmm dziwna sprawa. Coś źle zrobiłem?
+
+doooobra. Dwie rzeczy. Pierwsza to
+
+![{AF783357-77D7-4335-B3D6-D07BCF132DE6}](https://github.com/user-attachments/assets/94fc7023-dc06-404a-b181-1c433f7ca1a7)
+
+
+a druga to.. inny range skanuję xD
+172.16.41.0/24 - to prawidlowy
+
+![{518EC699-F159-4E78-AFA9-C88110007EA7}](https://github.com/user-attachments/assets/992333ca-034b-4822-9afa-fd2d7f55a72b)
+
+mało coś (ja kwidzę DC07 to zakładam, że 4,5,6 też istnieją. Ale zacznijmy od tego DCka z DNSów czyli .14
+
+(przy okazji EDR aż krzyczy)
+
+![{979D5FDA-91B6-424E-A190-9C5F2E68A2B8}](https://github.com/user-attachments/assets/4fa88a7f-f99b-46f8-b54f-7cdfbdbf1cdc)
+
+![{9B3DE66B-E8F1-4E88-B340-9A8A822A147D}](https://github.com/user-attachments/assets/5043974c-2408-4cf0-80bf-c7eb71240970)
+
+dobra coś się tutaj dzieje. Mamy np. `home-backups$`, których nie było widać z GUI.
+
+![{286E646C-D916-49DF-AC0D-2A1A5D9A6B17}](https://github.com/user-attachments/assets/c38367f8-25c8-42dc-b78b-ea4978fd16dd)
+
+ooo `.vhdx`. Zaskoczyli, nie powiem.
+- zaraz analiza poleci, ale najpierw coś sobie w tle poskanuje. Zapewne mogę wysłać plik bez drażenienia EDRa tylko sharem `transfer` i tak zrobię.
+
+![{24C2BCA0-FDE9-4A11-AC07-24C7335D3457}](https://github.com/user-attachments/assets/2a36ed4d-26c3-4704-82f8-f6c0c2af567b)
+
+![{3B253F46-D8C5-4B20-AF05-146B92BC7C07}](https://github.com/user-attachments/assets/46015bbe-5b48-4d35-8f04-263bec22c30e)
+
+![{6F20D867-04B7-4957-925E-A0F6647A103F}](https://github.com/user-attachments/assets/59b3e50c-b17d-49f5-aa5c-de518ec44b1f)
+
+dll można.
+
+![{A09E2F44-5AB2-4741-B50F-C1390DA3BA93}](https://github.com/user-attachments/assets/d386b640-fbcf-48db-a3cd-f7ebe6aa7082)
+
+exe, msi, script nie można.
+
+
+ale zerknijmy na te rulsy, bo to kurczę jednak easy i nie chce mi się wszystkie przekompilowywać na dllki.
+```
+<FilePathRule Id="fd686d83-a829-4351-8ff4-27c7de5755d2" Name="(Default Rule) All files" Description="Allows members of the local Administrators group to run all applications." UserOrGroupSid="S-1-5-32-544" Action="Allow"><Conditions><FilePathCondition Path="*"/></Conditions></FilePathRule>
+
+<FilePathRule Id="a61c8b2c-a319-4cd0-9690-d2177cad7b51" Name="(Default Rule) All files located in the Windows folder" Description="Allows members of the Everyone group to run applications that are located in the Windows folder." UserOrGroupSid="S-1-1-0" Action="Allow"><Conditions><FilePathCondition Path="%WINDIR%\*"/></Conditions></FilePathRule>
+
+<FilePathRule Id="921cc481-6e17-4653-8f75-050b80acca20" Name="(Default Rule) All files located in the Program Files folder" Description="Allows members of the Everyone group to run applications that are located in the Program Files folder." UserOrGroupSid="S-1-1-0" Action="Allow"><Conditions><FilePathCondition Path="%PROGRAMFILES%\*"/></Conditions></FilePathRule>
+```
+W skrócie to
+- Administratorzy mogą uruchamiać dowolne pliki z każdego miejsca.
+- Wszyscy użytkownicy mogą uruchamiać pliki z folderu Windows.
+- Wszyscy użytkownicy mogą uruchamiać pliki z folderu Program Files.
+
+weźmy jeszcze scripts
+```
+<FilePathRule Id="06dce67b-934c-454f-a263-2515c8796a5d" Name="(Default Rule) All scripts located in the Program Files folder" Description="Allows members of the Everyone group to run scripts that are located in the Program Files folder." UserOrGroupSid="S-1-1-0" Action="Allow"><Conditions><FilePathCondition Path="%PROGRAMFILES%\*"/></Conditions></FilePathRule>
+
+<FilePathRule Id="9428c672-5fc3-47f4-808a-a0011f36dd2c" Name="(Default Rule) All scripts located in the Windows folder" Description="Allows members of the Everyone group to run scripts that are located in the Windows folder." UserOrGroupSid="S-1-1-0" Action="Allow"><Conditions><FilePathCondition Path="%WINDIR%\*"/></Conditions></FilePathRule>
+
+<FilePathRule Id="ed97d0cb-15ff-430f-b82c-8d7832957725" Name="(Default Rule) All scripts" Description="Allows members of the local Administrators group to run all scripts." UserOrGroupSid="S-1-5-32-544" Action="Allow"><Conditions><FilePathCondition Path="*"/></Conditions></FilePathRule>
+```
+- Wszyscy użytkownicy mogą uruchamiać skrypty z folderu Program Files.
+- Wszyscy użytkownicy mogą uruchamiać skrypty z folderu Windows.
+- Administratorzy mogą uruchamiać dowolne skrypty z każdego miejsca.
+
+W sumie to jak możemy ładować .exe z C:\Windows to... do TEMP można załadować.
+
+Na poziomie explorera uruchamiam `C:\Windows\Temp\ADExplorer64.exe` i wszystko śmiga.
+
+![{0A78B0B5-0553-4AA3-91C3-FEE09516F5DB}](https://github.com/user-attachments/assets/9975ff4f-6c30-44cc-a1a5-bc0913b0bc41)
+
+![{F9DBCCB8-B3AB-4DBC-AD09-3B3CD0AA42CA}](https://github.com/user-attachments/assets/5113c11d-8840-4f1a-af85-5f67a8196061)
+
+![{C7814BEF-7171-4063-9BA6-FA7750634622}](https://github.com/user-attachments/assets/34391d21-0179-48d3-9aa6-a76aee35d0be)
+
+yeeeee
+
+Zrobię sobie snapshot, żeby móc to sobie przejrzeć u siebie na linuxie.
+
+![{71DE150F-DFCA-4726-8BEA-958A3F35AA66}](https://github.com/user-attachments/assets/3fa5e8ba-aa12-42c1-b1f7-f670bbef2175)
+
+![{306CE012-9B18-40B2-8034-20F2FA47ED19}](https://github.com/user-attachments/assets/afb71479-5fe7-4396-ab1e-bd337f27813b)
+
+
+zmieniam folder bo tam nie mamy dostępu na kopiowanie.
+
+![{EA517D3E-5AE2-48BC-A2C7-3FB77E6677D0}](https://github.com/user-attachments/assets/466dfd61-643c-4045-80eb-e1af2e253330)
+
+![{2A0B9619-A0E5-4FE2-B5CE-87749DBC8705}](https://github.com/user-attachments/assets/68967b31-a82d-46f7-9f80-15a744e6a3ad)
+
+![{B7B2C5F2-0F95-4A60-812E-E5C59671CD44}](https://github.com/user-attachments/assets/ab9f9c69-57b7-4deb-9a84-3377e21844dc)
+
+![{7126B6FF-DB54-47B4-A745-6E21DE50BE14}](https://github.com/user-attachments/assets/774286b6-4394-4e88-9ac0-ac9ffd962db2)
+
+- coś nie działa, coś źle zrobiłem.
+
+![{4D478990-9D24-4917-956C-38B2135CDF41}](https://github.com/user-attachments/assets/e9b2a761-bb6d-4bfc-81bf-e4be9d21d683)
+
+może teraz
+
+![{B28E0CD9-9355-4E13-9167-A9767A43A0F2}](https://github.com/user-attachments/assets/06615a03-642f-4d79-8aa7-dd5e61d66d8d)
+
+nadal źle :/
+- przeinstalowałem bloodhound i neo4ja, ale dalej nie idzie progres uploadu :/
+
+![{29A3E8A8-4B5D-412A-905B-4D7989EC7656}](https://github.com/user-attachments/assets/92c732f4-1b1a-4f0a-8bcb-38227905f8b7)
+
+Przeniosłem się na BHCE
+
+![{7E9337B9-2650-4AA2-A1D0-ECEEA6BA402F}](https://github.com/user-attachments/assets/d128f4c3-73aa-4659-ab1e-5e66e795ec93)
+
+![{779B90E4-C082-4323-B14C-ACDBF2D53650}](https://github.com/user-attachments/assets/017931ea-8b99-4944-966e-02452b274813)
+
+całkiem płynnie działa.
+
+![{289EB638-548E-40A1-9D0C-B32415ACEDA2}](https://github.com/user-attachments/assets/efcb5023-0506-4e44-8f77-bf25a90e04bd)
+
+
+chwilkę przeglądania i widzimy ciekawą rzecz `WriteAccountRestrictions`.
+
+![{0F9CA6C9-39E0-4AE2-A381-1F7B02ABCB9B}](https://github.com/user-attachments/assets/458dd0fb-145b-447a-a828-8f6918ba2a54)
+
+![{1815691C-F10A-4159-8F76-5E33007F6A28}](https://github.com/user-attachments/assets/ed5bd8f9-11f9-4af5-9b93-feb600b4a5b8)
+
+jednakże nie wydaje się to być prosty przypadek.
+
+
