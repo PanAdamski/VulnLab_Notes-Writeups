@@ -350,4 +350,6 @@ chwilkę przeglądania i widzimy ciekawą rzecz `WriteAccountRestrictions`.
 
 jednakże nie wydaje się to być prosty przypadek.
 
+![{0C6455B2-169E-42A2-B762-F2042F0C7620}](https://github.com/user-attachments/assets/59d8a8ee-a9fb-4605-9af8-e03586e3afa9)
 
+jeszcze sobie fake lnk stworzyłem i czas na spacerek/przerwę
