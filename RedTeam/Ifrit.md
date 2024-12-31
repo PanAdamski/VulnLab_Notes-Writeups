@@ -442,3 +442,13 @@ Przy okazji wiemy, że na windowsie jest python.
 ![{A5952953-3CCC-49CF-B936-9515EBEFA824}](https://github.com/user-attachments/assets/e6849aa7-7d70-4d83-bd23-be9ec80586d1)
 
 hmmmm chyba znalazłem rozwiązanie naszego problemu z komputerem. Logika podpowiada, że trzeba przejąć SYSTEM na DEV05, wyciągnąć hash maszynowy i użyć go do ataku, który pozwoli nam DCka przejąć
+
+Jeszcze zanim zrobię coś co miałem zrobić to się pobawię inaczej. Ciekawe jest to, że z tego komputer jak robię `net use` to dostaję NetNTLMv1, a nie 2.
+
+![{26754E8B-01DA-44C5-BF00-7D745A0DC90E}](https://github.com/user-attachments/assets/594f613e-ab62-4d9c-b7d7-6d6f3b29095f)
+
+stare hasło nie pasuje, nawet z mega dużymi rulsami więc nie jest to jego wariacja.
+- rockyou z małymi rulsami też failed
+
+
+
