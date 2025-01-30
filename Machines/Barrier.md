@@ -241,7 +241,7 @@ now SAML is huuge
 
 ![{6707BA66-02B4-4246-8DA1-CC3754695CBA}](https://github.com/user-attachments/assets/798243b6-b7ce-4b77-8c1f-bb7e020deff2)
 
-And we are akadmin now
+And we are the `akadmin` now
 
 ![{6BD10AD1-6FF2-47AD-ADB9-2A9DD1C97703}](https://github.com/user-attachments/assets/1382a321-080c-462b-8265-d9ccd94723b6)
 
@@ -250,6 +250,16 @@ I belive it's time to typical CI/CD exploitation.
 In admin panel I found runner so.. it coundn't be hard to get RCE
 
 ![{38693341-419A-4E74-BE0B-7EAAD83AF763}](https://github.com/user-attachments/assets/bc101b78-da42-46a2-b5c0-9bdb74180638)
+
+Doing the enumeration we can find some information about used technologies
+
+![{9166C53E-F7CF-47C8-B41B-F895E4AA10DF}](https://github.com/user-attachments/assets/e15db896-fae6-4906-9875-19f3d109a950)
+
+![{7A1EB1FD-E3DF-427E-B2CA-DC14FBC3453A}](https://github.com/user-attachments/assets/1457dc60-68bd-47cf-b4f6-f0e1cac17fa0)
+
+example of exploitation [https://frichetten.com/blog/abusing-gitlab-runners/](https://frichetten.com/blog/abusing-gitlab-runners/)
+
+
 
 
 
