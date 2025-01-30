@@ -148,6 +148,109 @@ maybe I should explore this `9000` port.
 
 ![{8D8463A8-00FA-4C62-8517-DFB16948CAEE}](https://github.com/user-attachments/assets/201fdb9b-1737-4e04-ab7f-e97866eb330c)
 
-looks nice.
+widzę, że SSO w gitlabie działa, a w 2024 było CVE na SSO. Trzeba się przyjrzyć `CVE-2024-45409`.
+
+oooo and SSO redirect as here 
+
+![{45CA717B-6AF8-436F-B666-9C24C9EF49C8}](https://github.com/user-attachments/assets/ef951d3f-54a1-4376-b42f-a0532fb548f9)
+
+![{0DB588D2-D73F-4180-A57D-EEC5CE1A7991}](https://github.com/user-attachments/assets/d23fc40b-3f22-4129-bac3-c468a2f5730d)
+
+we can "decode" SAML Request using cyberchef
+
+![{85369CC3-1A19-43BC-AE99-974C5D98ABAE}](https://github.com/user-attachments/assets/1dfa6809-44ec-4ce6-97a3-e622f74de301)
+
+Now we need find valid username.
+
+![{904ED26E-B1C0-4C07-B095-A94D96E1C9DE}](https://github.com/user-attachments/assets/98f50860-102c-486f-8c25-7bc555d630b8)
+
+:(
+
+by enumeration I found `satoru` and `akadmin`.
+
+![{77E803CA-3115-4F50-A2BA-05541D950080}](https://github.com/user-attachments/assets/0a4d069c-6444-472b-9ff4-afb627283363)
+
+![{894421EB-AE0D-4643-B405-42C721EBBD30}](https://github.com/user-attachments/assets/ec6a1410-0d39-470d-b9ea-1aff0800e738)
+
+
+[https://gitlab.barrier.vl/satoru/gitconnect/-/blob/main/gitconnect.py](https://gitlab.barrier.vl/satoru/gitconnect/-/blob/main/gitconnect.py)
+```
+import requests
+from urllib.parse import urljoin
+import urllib3
+urllib3.disable_warnings(urllib3.exceptions.InsecureRequestWarning)
+
+def get_gitlab_repos():
+    base_url = 'https://gitlab.barrier.vl'
+    api_url = urljoin(base_url, '/api/v4/')
+    
+    auth_data = {
+        'grant_type': 'password',
+        'username': 'satoru',
+        'password': '***'
+    }
+    
+    try:
+        session = requests.Session()
+        session.verify = False
+        
+        response = session.post(urljoin(base_url, '/oauth/token'), data=auth_data)
+        response.raise_for_status()
+        
+        token = response.json()['access_token']
+        headers = {'Authorization': f'Bearer {token}'}
+        
+        projects_response = session.get(urljoin(api_url, 'projects'), headers=headers)
+        projects_response.raise_for_status()
+        
+        projects = projects_response.json()
+        
+        print("Available repositories:")
+        for project in projects:
+            print(f"\nName: {project['name']}")
+            print(f"Description: {project.get('description', 'No description available')}")
+            print(f"URL: {project['web_url']}")
+            print(f"Last activity: {project['last_activity_at']}")
+            print("-" * 50)
+            
+    except requests.exceptions.RequestException as e:
+        print(f"Error occurred: {str(e)}")
+        if hasattr(e.response, 'text'):
+            print(f"Response text: {e.response.text}")
+    finally:
+        session.close()
+
+if __name__ == "__main__":
+    get_gitlab_repos()
+
+```
+
+![{64023B39-FF08-4BF4-8697-7140A2B6740D}](https://github.com/user-attachments/assets/7b225d25-3d5b-45a2-8267-69ecb041c3aa)
+
+![{5184A25D-0289-4987-A489-14A834587232}](https://github.com/user-attachments/assets/80ea799b-c07c-4402-b68d-361c15f3c6cd)
+
+![{2FC24FAE-E903-4C10-899E-67D4183B2A43}](https://github.com/user-attachments/assets/0643b1e2-1de0-4ef0-b3ce-cc2dbf69b430)
+
+okey now we can use SAML exploit.
+
+now SAML is huuge
+
+![{63195DAE-8F75-41A8-9FDA-3CF3E8949793}](https://github.com/user-attachments/assets/650bcfd0-6821-46f5-b84e-e72c7bf742f0)
+
+![{E6BBF712-00D1-41E8-984E-2F1E7C6862F4}](https://github.com/user-attachments/assets/64ca5614-5c64-40ca-a2aa-cd2339df1927)
+
+![{6707BA66-02B4-4246-8DA1-CC3754695CBA}](https://github.com/user-attachments/assets/798243b6-b7ce-4b77-8c1f-bb7e020deff2)
+
+And we are akadmin now
+
+![{6BD10AD1-6FF2-47AD-ADB9-2A9DD1C97703}](https://github.com/user-attachments/assets/1382a321-080c-462b-8265-d9ccd94723b6)
+
+I belive it's time to typical CI/CD exploitation.
+
+In admin panel I found runner so.. it coundn't be hard to get RCE
+
+![{38693341-419A-4E74-BE0B-7EAAD83AF763}](https://github.com/user-attachments/assets/bc101b78-da42-46a2-b5c0-9bdb74180638)
+
+
 
 
