@@ -114,3 +114,111 @@ Wartości uzsykujemy z plików, które są na screenach wyżej oraz z pypykatza
 pypykatz registry --sam SAM --security SECURITY SYSTEM
 ```
 
+Widzieliśmy, że tam sftp było łączenie, ale port 22 otwarty to może się uda zwyczają sesję nawiązac.
+
+![{35B83CF9-DA90-4C6E-A7AE-1B5AC35F8762}](https://github.com/user-attachments/assets/0addc2fc-3433-429d-b5be-b82258424434)
+
+
+Długi lag, który nigdy się nie kończy. Kolejne opcje to socksproxy machnać albo po prostu połączyć się po sftp.
+
+![{D3AAC3C9-0736-4AC5-B841-FADD4FC2A1CE}](https://github.com/user-attachments/assets/a996fd84-32fd-4596-8f89-ad2b0bb5c12c)
+
+Wrzuciłem edytowane `authorized_keys` nie wiem na co licząc ale chyba na magię xD
+
+![{2BF46F91-814F-43C6-B417-627ADF169F9B}](https://github.com/user-attachments/assets/e68bc5b4-200e-4fdb-baf7-d385fa5eeadb)
+
+No to nie ma prawa podziałać bo i tak nie udaje się nam połączyć hasłem.
+
+
+![{E423F775-416F-43B0-9AF9-E672ECC0149C}](https://github.com/user-attachments/assets/7d16aa0c-2e0c-40a9-aa6f-517b6eebec4e)
+
+klasycznie coś siedzi w opt (może obejdzie się bez socksproxy).
+
+![{D0E3AE9B-B040-4E69-9B86-F9CF62628F88}](https://github.com/user-attachments/assets/dcf2c40f-369c-43cc-b3c1-421f56a34489)
+
+pobieramy wszystko.
+
+cat restrict 
+```
+#!/bin/bash
+
+/usr/lib/openssh/sftp-server -d $1
+
+```
+
+cat app.py 
+```
+import os
+from datetime import datetime, timedelta
+from helper import tar_and_move_files
+
+backup_dir = '/backup'
+archive_dir = '/archive'
+threshold_date = datetime.now() - timedelta(days=3*365)
+
+def scan_and_archive_files():
+    if not os.path.exists(archive_dir):
+        os.makedirs(archive_dir)
+    for root, dirs, files in os.walk(backup_dir):
+        for file in files:
+            file_path = os.path.join(root, file)
+            file_mod_time = datetime.fromtimestamp(os.path.getmtime(file_path))
+            if file_mod_time < threshold_date:
+                print(f'Moving {file_path} to archive...')
+                tar_and_move_files(file_path, archive_dir)
+            else:
+                print(f'{file_path} is not old enough to archive.')
+
+if __name__ == '__main__':
+    scan_and_archive_files()
+```
+
+cat helper.py
+```                                  
+import os
+import subprocess
+from datetime import datetime
+
+def tar_and_move_files(file_path, archive_dir):
+    current_date = datetime.now().strftime('%Y-%m-%d')
+    tar_filename = os.path.join(archive_dir, f'{current_date}_{os.path.basename(file_path)}.tar.gz')
+    subprocess.Popen(["/usr/bin/tar", "-czf", tar_filename, "-C", os.path.dirname(file_path), os.path.basename(file_path)])
+    os.remove(file_path)
+
+```
+
+Odwiedzamy foldery ze skryptów.
+
+![{0B933718-A553-4DD2-ACC9-FC76A13DDEFD}](https://github.com/user-attachments/assets/b616440b-b420-4455-b0b9-c2e1cb747f69)
+
+backup to folder, który mieliśmy dostępny od początku na guest/null sesji smb.
+
+Uruchomienie pełnego shella jest dośc proste. wystarczy do pliku restrict dodać bash albo sh. Wysłać plik i mamy pełnego shella
+
+![{0B19199D-8956-4CF6-91A7-CC91AAA4E296}](https://github.com/user-attachments/assets/dde6d9aa-44cf-4927-bf07-6a31bcdd06ec)
+
+![{486F6995-07D0-4392-92D0-64BC91695BB1}](https://github.com/user-attachments/assets/5aeff763-2b06-4fde-abac-16eae863b8bd)
+
+
+
+
+Po dłuższej analizie doszedłem do wniosku, że w celu eskalacji trzeba delikatnie zmanipulować plikiem helper.cpython-310.pyc, który jest w `/opt/archiver/__pycache__/`
+
+Ta manipulacja plikiem pamięci podręcznej pozwoli nam "przenieść plik starszy niż 3 lata" za pomocą funkcji `subprocess.Popen` wywołując binarkę `/usr/bin/tar`. Wystarczy, że lekko ją podmienimy.
+```
+sed -i 's|/usr/bin/tar|/tmp/bin/tar|g' helper.cpython-310.pyc
+```
+
+i teraz powinnien korzystać z naszego "pliku binarnego".
+
+![{35B250B8-1D0D-4331-838C-081CFE14A1DA}](https://github.com/user-attachments/assets/001d7464-c95a-40b6-b57c-dc0d68f64f7b)
+
+![{85461A27-913A-473D-8D3C-2C7345A300BA}](https://github.com/user-attachments/assets/c0d46fcf-3d7c-4a1c-9b88-bd9af4ad1765)
+
+tworzymy wystarczająco stary plik, żeby ztrigoerować crona i.. jesteśmy rootem :D
+
+![{63512F17-37C0-4942-B077-CB1C7B3099FB}](https://github.com/user-attachments/assets/9afd2e07-aaf0-4997-ad5f-98980b780506)
+
+![{DA7B2CF3-44B5-45BB-8379-6D2B677A9792}](https://github.com/user-attachments/assets/a2769b3d-c054-4a7a-bb5a-de6943b1e6f9)
+
+FINISH!!!
