@@ -86,6 +86,10 @@ tutaj dużo
 
 tutaj mniej, ale nie ma credsów... coś robię źle.
 
+![{82DD61F6-7618-47F4-9F30-D78A2E3D96B3}](https://github.com/user-attachments/assets/4f31319b-1f08-4209-9ffd-3cdc9161e474)
+
+I coraz gorzej...
+
 ```
 modprobe nbd
 qemu-nbd --connect=/dev/nbd0 /root/file02.vmdk
@@ -96,4 +100,17 @@ mount -o ro /mnt/bitlocker/dislocker-file /mnt/2
 ```
 Wersja na windowsa wjeżdża bo mi się pomysły kończą.
 
+![{962C9F06-6907-47E9-B7BB-DBB736EEE32C}](https://github.com/user-attachments/assets/6cf7667a-46de-459f-add3-155f30709088)
+
+uzyskuję pełne SID Administratora i svc_backup.
+
+- zmarnowałem kolejne 2h. Okazało się, że wystarczy dodać 0x przed wartość masterkey.....
+
+![pass](https://github.com/user-attachments/assets/a9faf1ba-4866-494a-a3ca-6f8f0d82b0d5)
+
+Generalnie tutaj jest co trzeba zrobić.
+Wartości uzsykujemy z plików, które są na screenach wyżej oraz z pypykatza
+```
+pypykatz registry --sam SAM --security SECURITY SYSTEM
+```
 
